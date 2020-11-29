@@ -45,7 +45,7 @@ class _VisitorEditedState extends State<VisitorEdited> {
                           // top: SizeConfig.blockSizeVertical * 5, 
                           bottom: SizeConfig.blockSizeVertical * 5),
                       child: Text(
-                        "A visitor has been edited",
+                        "Edited visitor",
                         textScaleFactor: 1.5,
                         style: TextStyle(
                           color: Color(0xff2699fb),

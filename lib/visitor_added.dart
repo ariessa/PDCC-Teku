@@ -43,7 +43,7 @@ class _VisitorAddedState extends State<VisitorAdded> {
                           // top: SizeConfig.blockSizeVertical * 5, 
                           bottom: SizeConfig.blockSizeVertical * 5),
                       child: Text(
-                        "New visitor has been added",
+                        "Added visitor",
                         textScaleFactor: 1.5,
                         style: TextStyle(
                           color: Color(0xff2699fb),

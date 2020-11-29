@@ -54,7 +54,7 @@ class CheckInCard extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: SizeConfig.blockSizeHorizontal * 1,
                     ),
                     Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

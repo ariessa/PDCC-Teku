@@ -60,7 +60,7 @@ class _AddCheckInCompletedState extends State<AddCheckInCompleted> {
                           // top: SizeConfig.blockSizeVertical * 5, 
                           bottom: SizeConfig.blockSizeVertical * 5),
                       child: Text(
-                        "New check in has been added",
+                        "Added check in",
                         textScaleFactor: 1.5,
                         style: TextStyle(
                           color: Color(0xff2699fb),

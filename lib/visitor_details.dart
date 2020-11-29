@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:pdcc_teku/misc.dart';
 import 'package:pdcc_teku/visitor_main.dart';
 import 'package:pdcc_teku/visitor_edit.dart';
-import 'package:pdcc_teku/visitor_deleted.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class VisitorDetails extends StatelessWidget {
@@ -253,24 +252,7 @@ class VisitorDetails extends StatelessWidget {
                     ),
                   ),
                   onTap: () async {
-                    await db.collection('visitors').doc(documentId).delete();
-
-                    if (gender == "Male") {
-                      db
-                          .collection('genders')
-                          .doc('male')
-                          .update({"taskVal": FieldValue.increment(-1)});
-                    } else {
-                      db
-                          .collection('genders')
-                          .doc('female')
-                          .update({"taskVal": FieldValue.increment(-1)});
-                    }
-
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VisitorDeleted()));
+                      _showMyDialog(context, 'Are you sure you want to delete visitor?');
                   },
                 ),
               ],
@@ -280,4 +262,76 @@ class VisitorDetails extends StatelessWidget {
       )),
     );
   }
+
+  Future<void> _showMyDialog(BuildContext context, String message) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text('Invalid Login'),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text(message)
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('YES'),
+            onPressed: () async {
+                    await db.collection('visitors').doc(documentId).delete();
+
+                    if (gender == "Male") {
+
+                    FirebaseFirestore.instance
+                    .collection('genders')
+                    .doc('male')
+                    .get()
+                    .then((DocumentSnapshot documentSnapshot) {
+                      if (documentSnapshot.exists) {
+                        print('Document exists on the database');
+                      }
+                      if (documentSnapshot.data()['taskVal'] > 0) {
+                        db
+                          .collection('genders')
+                          .doc('male')
+                          .update({"taskVal": FieldValue.increment(-1)});
+                      }
+                    });
+
+
+                    } else {
+                      
+                                          FirebaseFirestore.instance
+                    .collection('genders')
+                    .doc('female')
+                    .get()
+                    .then((DocumentSnapshot documentSnapshot) {
+                      if (documentSnapshot.exists) {
+                        print('Document exists on the database');
+                      }
+                      if (documentSnapshot.data()['taskVal'] > 0) {
+                        db
+                          .collection('genders')
+                          .doc('female')
+                          .update({"taskVal": FieldValue.increment(-1)});
+                      }
+                    });
+                    }
+              Navigator.of(context).pushReplacementNamed('/deleted');
+            },
+          ),
+          TextButton(
+            child: Text('NO'),
+            onPressed: () async {
+              Navigator.of(context).pop();
+            }
+          ),
+        ],
+      );
+    },
+  );
+}
 }

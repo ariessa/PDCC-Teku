@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pdcc_teku/visitor_added.dart';
-import 'package:pdcc_teku/misc.dart';
+import 'package:pdcc_teku/misc.dart' show EmailValidator, SizeConfig;
 
 class VisitorAdd extends StatefulWidget {
   @override
@@ -107,8 +107,15 @@ class _VisitorAddState extends State<VisitorAdd> {
                           onSaved: (value) => _email = value,
                           keyboardType: TextInputType.emailAddress,
                           autofocus: true,
-                          validator: (value) =>
-                              value.isEmpty ? 'Email is required' : null,
+                     validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Email address cannot be empty';
+                      }
+                      if (!value.isValidEmail()) {
+                        return 'Invalid email';
+                      }
+                      return null;
+                    },
                           decoration: InputDecoration(
                             labelText: "Email",
                             fillColor: Colors.white,

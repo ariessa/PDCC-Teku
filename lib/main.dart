@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
+import 'package:pdcc_teku/visitor_deleted.dart';
 import 'menu.dart';
 import 'login.dart';
 import 'dart:async';
@@ -18,6 +19,13 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitUp]);
     return MaterialApp(
+          // Start the app with the "/" named route. In this case, the app starts
+    // on the FirstScreen widget.
+    initialRoute: '/',
+    routes: {
+      // When navigating to the "/second" route, build the SecondScreen widget.
+      '/deleted': (context) => VisitorDeleted(),
+    },
         debugShowCheckedModeBanner: false,
         title: 'PDCC Teku',
         theme: ThemeData(primarySwatch: Colors.blue),

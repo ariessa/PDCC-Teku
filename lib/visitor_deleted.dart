@@ -43,7 +43,7 @@ class _VisitorDeletedState extends State<VisitorDeleted> {
                           // top: SizeConfig.blockSizeVertical * 5, 
                           bottom: SizeConfig.blockSizeVertical * 5),
                       child: Text(
-                        "A visitor has been deleted",
+                        "Deleted visitor",
                         textScaleFactor: 1.5,
                         style: TextStyle(
                           color: Color(0xff2699fb),

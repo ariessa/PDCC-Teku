@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
-import 'package:pdcc_teku/misc.dart';
+import 'package:pdcc_teku/misc.dart' show EmailValidator, SizeConfig;
 
 class LoginPage extends StatefulWidget {
   @override
@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     SizeConfig().init(context);
     return Scaffold(
         body: SingleChildScrollView(
@@ -54,6 +55,15 @@ class _LoginPageState extends State<LoginPage> {
                       left: SizeConfig.blockSizeHorizontal * 10,
                       right: SizeConfig.blockSizeHorizontal * 10),
                   child: TextFormField(
+                     validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Email address cannot be empty';
+                      }
+                      if (!value.isValidEmail()) {
+                        return 'Invalid email';
+                      }
+                      return null;
+                    },
                       onSaved: (value) => _email = value,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -73,6 +83,12 @@ class _LoginPageState extends State<LoginPage> {
                       left: SizeConfig.blockSizeHorizontal * 10,
                       right: SizeConfig.blockSizeHorizontal * 10),
                   child: TextFormField(
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Password cannot be empty';
+                      }
+                      return null;
+                    },
                       onSaved: (value) => _password = value,
                       obscureText: true,
                       decoration: InputDecoration(
@@ -113,19 +129,26 @@ class _LoginPageState extends State<LoginPage> {
 
                       // Validate will return true if is valid, or false if invalid.
                       if (form.validate()) {
+
+                        // Check if email or password is empty or not
+
+                        // Check if email is valid of not
+
+                        // If both checks passed, go to try
                         try {
                           await auth.FirebaseAuth.instance
                               .signInWithEmailAndPassword(
                                   email: _email, password: _password);
                         } on auth.FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
-                            // print('No user found for that email.');
+                            print('No user found for that email.');
                             _showMyDialog(context, 'No user found for that email.');
                           } else if (e.code == 'wrong-password') {
-                            // print('Wrong password provided for that user.');
+                            print('Wrong password provided for that user.');
                             _showMyDialog(context, 'Wrong password provided for that user.');
                           }
                         }
+                        // if email is not of valid format
                       }
                     }),
               ]))),
@@ -138,7 +161,7 @@ Future<void> _showMyDialog(BuildContext context, String message) async {
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
       return AlertDialog(
-        title: Text('Invalid Login Credentials'),
+        title: Text('Invalid Login'),
         content: SingleChildScrollView(
           child: ListBody(
             children: <Widget>[

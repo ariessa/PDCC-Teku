@@ -135,8 +135,15 @@ class _VisitorEditState extends State<VisitorEdit> {
                     initialValue: _email,
                     onSaved: (value) => _email = value,
                     keyboardType: TextInputType.emailAddress,
-                    validator: (value) =>
-                        value.isEmpty ? 'Email is required' : null,
+                     validator: (value) {
+                      if (value.isEmpty) {
+                        return 'Email address is required';
+                      }
+                      if (!value.isValidEmail()) {
+                        return 'Invalid email';
+                      }
+                      return null;
+                    },
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(14),
                     ],
