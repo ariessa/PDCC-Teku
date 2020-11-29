@@ -28,23 +28,26 @@
 .packages
 .pub-cache/
 .pub/
-# /build/app/generated/
-# /build/app/intermediates/
-# /build/app/kotlin/
+/build/app/generated/
+/build/app/intermediates/
+/build/app/kotlin/
 # /build/app/outputs/logs/
 # /build/app/outputs/mapping/r8/release/
-# /build/app/reports/
-# /build/app/tmp/
-# /build/app/outputs/apk/release/*.json
-# /build/firebase_analytics/
-# /build/cloud_firestore_web/
-# /build/cloud_firestore/
-# /build/firebase_auth/
-# /build/firebase_auth_web/
-# /build/firebase_core/
-# /build/firebase_core_web/
-# /build/kotlin/
-
+/build/app/reports/
+/build/app/tmp/
+/build/app/outputs/apk/release/*.json
+/build/firebase_analytics/
+/build/cloud_firestore_web/
+/build/cloud_firestore/
+/build/firebase_auth/
+/build/firebase_auth_web/
+/build/firebase_core/
+/build/firebase_core_web/
+/build/kotlin/
+/build/cloud_functions/
+/build/firebase_crashlytics/
+/build/firebase_storage/
+*.dill
 
 # # Android related
 **/android/**/gradle-wrapper.jar
@@ -90,5 +93,5 @@
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 # Project exclude paths
-/build/
+# /build/
 *key.properties
