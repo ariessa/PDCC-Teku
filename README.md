@@ -9,6 +9,11 @@ A Flutter application to manage visitors and check ins at PDCC Teku. It can run 
 The features of this app are as follows: 
 
 ● Log In 
+
+● Dashboard
+ - View total daily visitors
+ - View total monthly visitors
+ - View total visitors by gender
  
 ● Manage Check In
  - Add check in
