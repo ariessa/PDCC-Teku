@@ -4,7 +4,7 @@ A Flutter application to manage visitors and check ins at PDCC Teku. It can run 
 
 </br> 
 
-## Understanding Pow
+## Understanding the App
 
 The features of this app are as follows: 
 
@@ -22,19 +22,42 @@ The features of this app are as follows:
  
 ● Log Out
 
-## Installing Pow
+## Installing Release Builds
 
 > **_NOTE:_**  Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
 
 Download the specific release APK based on your device's CPU architecture and install it.
 
-+ [ARM](https://github.com/ariessa/PowApp/blob/old/android/app/release/app-armeabi-v7a-release.apk)
-+ [ARM64](https://github.com/ariessa/PowApp/blob/old/android/app/release/app-arm64-v8a-release.apk)
-+ [x86_64](https://github.com/ariessa/PowApp/blob/old/android/app/release/app-x86_64-release.apk)
++ [ARM](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-armeabi-v7a-release.apk)
++ [ARM64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-arm64-v8a-release.apk)
++ [x86_64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-x86_64-release.apk)
+
+Alternately, you can also download the appbundle or fat APK.
+
++ [AppBundle](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.aab)
++ [Fat APK](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.apk)
 
 > **_WARNING I:_** There is no apk for x86 Android. This is because Flutter does not currently support building for x86 Android. Refer to this [issue](https://github.com/flutter/flutter/issues/9253) on Github.
 
 > **_WARNING II:_** Release APKs cannot be installed on emulators.
+</br> 
+
+## Installing Debug Builds
+
+> **_NOTE:_**  Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
+
+Download the specific release APK based on your device's CPU architecture and install it.
+
++ [ARM](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-armeabi-v7a-release.apk)
++ [ARM64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-arm64-v8a-release.apk)
++ [x86_64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-x86_64-release.apk)
+
+Or, you can download the fat APK that can be installed on `ARM`, `ARM64`, and `x86_64`.
+
++ [Fat APK](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.apk)
+
+> **_WARNING I:_** There is no apk for x86 Android. This is because Flutter does not currently support building for x86 Android. Refer to this [issue](https://github.com/flutter/flutter/issues/9253) on Github.
+
 </br> 
 
 ## Using the App
@@ -52,7 +75,7 @@ Log in using the following credentials:
 + Password: passwordtestuser2
 
 For detailed documentation, see the
-[user manual](link will be added later).
+user manual (link will be added later).
 
 </br> 
 
