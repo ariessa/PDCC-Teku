@@ -9,6 +9,11 @@ A Flutter application to manage visitors and check ins at PDCC Teku. It can run 
 The features of this app are as follows: 
 
 ● Log In 
+
+● Dashboard
+ - View total daily visitors
+ - View total monthly visitors
+ - View total visitors by gender
  
 ● Manage Check In
  - Add check in
@@ -48,13 +53,13 @@ Alternately, you can also download the appbundle or fat APK.
 
 Download the specific release APK based on your device's CPU architecture and install it.
 
-+ [ARM](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-armeabi-v7a-release.apk)
-+ [ARM64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-arm64-v8a-release.apk)
-+ [x86_64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-x86_64-release.apk)
++ [ARM](build/app/outputs/apk/debug/app-armeabi-v7a-debug.apk)
++ [ARM64](build/app/outputs/apk/debug/app-arm64-v8a-debug.apk)
++ [x86_64](build/app/outputs/apk/debug/app-x86_64-debug.apk)
 
 Or, you can download the fat APK that can be installed on `ARM`, `ARM64`, and `x86_64`.
 
-+ [Fat APK](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.apk)
++ [Fat APK](build/app/outputs/apk/debug/app-universal-debug.apk)
 
 > **_WARNING I:_** There is no apk for x86 Android. This is because Flutter does not currently support building for x86 Android. Refer to this [issue](https://github.com/flutter/flutter/issues/9253) on Github.
 
@@ -80,7 +85,7 @@ user manual (link will be added later).
 </br> 
 
 ## Screens
-> The screeshots are of different app. Will be updated with ones from PDCC Teku app.
+> The screeshots are of different app. Will be updated with the ones from PDCC Teku app.
 
 ### Log In
 
