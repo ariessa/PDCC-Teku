@@ -50,7 +50,7 @@ class CheckInCard extends StatelessWidget {
                       child: Image(
                         width: SizeConfig.blockSizeHorizontal * 18,
                         height: SizeConfig.blockSizeVertical * 8,
-                        image: AssetImage('assets/Money.png'),
+                        image: AssetImage('assets/CheckIn.png'),
                       ),
                     ),
                     SizedBox(

@@ -31,7 +31,9 @@ class VisitorDetails extends StatelessWidget {
     } else {
       image = 'assets/Girl.png';
     }
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         leading: GestureDetector(
@@ -260,7 +262,7 @@ class VisitorDetails extends StatelessWidget {
           ],
         ),
       )),
-    );
+    ));
   }
 
   Future<void> _showMyDialog(BuildContext context, String message) async {
@@ -268,7 +270,9 @@ class VisitorDetails extends StatelessWidget {
     context: context,
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
-      return AlertDialog(
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child:       AlertDialog(
         title: Text('Invalid Login'),
         content: SingleChildScrollView(
           child: ListBody(
@@ -304,7 +308,7 @@ class VisitorDetails extends StatelessWidget {
 
                     } else {
                       
-                                          FirebaseFirestore.instance
+                    FirebaseFirestore.instance
                     .collection('genders')
                     .doc('female')
                     .get()
@@ -330,7 +334,8 @@ class VisitorDetails extends StatelessWidget {
             }
           ),
         ],
-      );
+      ));
+
     },
   );
 }

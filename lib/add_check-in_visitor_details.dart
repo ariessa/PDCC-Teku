@@ -24,7 +24,9 @@ class AddCheckInVisitorDetails extends StatelessWidget {
     } else {
       image = 'assets/Girl.png';
     }
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         leading: GestureDetector(
@@ -226,6 +228,6 @@ class AddCheckInVisitorDetails extends StatelessWidget {
               ),
             )),
       ),
-    );
+    ));
   }
 }

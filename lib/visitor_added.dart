@@ -11,7 +11,9 @@ class _VisitorAddedState extends State<VisitorAdded> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
         resizeToAvoidBottomPadding: false,
         body: SingleChildScrollView(
             child: Container(
@@ -77,6 +79,6 @@ class _VisitorAddedState extends State<VisitorAdded> {
               ),
             ],
           ),
-        )));
+        ))));
   }
 }

@@ -22,7 +22,9 @@ class _VisitorMainState extends State<VisitorMain> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           leading: GestureDetector(
@@ -124,6 +126,6 @@ class _VisitorMainState extends State<VisitorMain> {
                       },
                     ))),
           ],
-        ));
+        )));
   }
 }

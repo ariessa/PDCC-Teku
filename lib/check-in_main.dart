@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:pdcc_teku/menu.dart';
 import 'package:pdcc_teku/add_check-in_main.dart';
@@ -19,10 +21,30 @@ class _CheckInMainState extends State<CheckInMain> {
     });
   }
 
+  var firestoreFemale;
+  var firestoreMale;
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+
+    // Get document with ID female in collection genders
+    FirebaseFirestore.instance
+      .collection('genders')
+      .doc('female')
+      .get()
+      .then((DocumentSnapshot documentSnapshot) {
+      // Get value of field taskVal from document genders/female
+      firestoreFemale= documentSnapshot.data()['taskVal'];
+
+      // Get value of field taskVal from document genders/male
+      firestoreMale = documentSnapshot.data()['taskVal'];
+    });
+
+    // Else, navigate to add check in screen
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           leading: GestureDetector(
@@ -41,9 +63,19 @@ class _CheckInMainState extends State<CheckInMain> {
           actions: <Widget>[
             GestureDetector(
               child: Image.asset('assets/Add.png'),
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AddCheckInMain())),
-            )
+              onTap: () {
+                // Check if number of visitor is 0 or not
+                // If true, disable add check in button
+                if (firestoreFemale + firestoreMale == 0) {
+                  setState(() => false);
+                  _showMyDialog(context);
+                }
+                else {
+                  setState(() => true);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddCheckInMain()));
+                }
+              }),
           ],
         ),
         body: Column(
@@ -125,6 +157,36 @@ class _CheckInMainState extends State<CheckInMain> {
                       },
                     ))),
           ],
-        ));
+        )));
   }
+
+  Future<void> _showMyDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child:       AlertDialog(
+        title: Text('Cannot Add Check In'),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              Text('Add check in requires at least 1 visitor')
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          TextButton(
+            child: Text('CLOSE'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ));
+
+    },
+  );
+}
 }

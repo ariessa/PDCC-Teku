@@ -47,7 +47,9 @@ class _VisitorEditState extends State<VisitorEdit> {
     } else {
       radioValue = 1;
     }
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         leading: GestureDetector(
@@ -87,6 +89,7 @@ class _VisitorEditState extends State<VisitorEdit> {
                         value.isEmpty ? 'First Name is required' : null,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(20),
+                      FilteringTextInputFormatter.deny(RegExp("[0-9]")),
                     ],
                     decoration: InputDecoration(
                       labelText: "First Name",
@@ -113,6 +116,7 @@ class _VisitorEditState extends State<VisitorEdit> {
                         value.isEmpty ? 'Last Name is required' : null,
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(20),
+                      FilteringTextInputFormatter.deny(RegExp("[0-9]")),
                     ],
                     decoration: InputDecoration(
                       labelText: "Last Name",
@@ -167,9 +171,16 @@ class _VisitorEditState extends State<VisitorEdit> {
                 child: TextFormField(
                     initialValue: _phoneNumber,
                     onSaved: (value) => _phoneNumber = value,
-                    keyboardType: TextInputType.number,
-                    validator: (value) =>
-                        value.isEmpty ? 'Phone Number is required' : null,
+                    keyboardType: TextInputType.phone,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                        return 'Phone Number is required';
+                      }
+                      if (!value.isValidPhoneNumber()) {
+                        return 'Invalid phone number';
+                      }
+                          return null;
+                          },
                     inputFormatters: [
                       LengthLimitingTextInputFormatter(12),
                     ],
@@ -268,23 +279,45 @@ class _VisitorEditState extends State<VisitorEdit> {
                               builder: (context) => VisitorEdited()));
 
                       if (_gender == "Male") {
+                      FirebaseFirestore.instance
+                    .collection('genders')
+                    .doc('female')
+                    .get()
+                    .then((DocumentSnapshot documentSnapshot) {
+                      if (documentSnapshot.exists) {
+                        print('Document exists on the database');
+                      }
+                      if (documentSnapshot.data()['taskVal'] > 0) {
+                        db
+                          .collection('genders')
+                          .doc('female')
+                          .update({"taskVal": FieldValue.increment(-1)});
+                      }
+                    });
                         db
                             .collection('genders')
                             .doc('male')
-                            .update({"taskVal": FieldValue.increment(-1)});
-                        db
-                            .collection('genders')
-                            .doc('female')
                             .update({"taskVal": FieldValue.increment(-1)});
                         db
                             .collection('genders')
                             .doc('male')
                             .update({"taskVal": FieldValue.increment(1)});
                       } else {
+                    FirebaseFirestore.instance
+                    .collection('genders')
+                    .doc('male')
+                    .get()
+                    .then((DocumentSnapshot documentSnapshot) {
+                      if (documentSnapshot.exists) {
+                        print('Document exists on the database');
+                      }
+                      if (documentSnapshot.data()['taskVal'] > 0) {
                         db
-                            .collection('genders')
-                            .doc('male')
-                            .update({"taskVal": FieldValue.increment(-1)});
+                          .collection('genders')
+                          .doc('male')
+                          .update({"taskVal": FieldValue.increment(-1)});
+                      }
+                      });
                         db
                             .collection('genders')
                             .doc('female')
@@ -302,6 +335,7 @@ class _VisitorEditState extends State<VisitorEdit> {
           ),
         ),
       ),
+    )
     );
   }
 }
@@ -309,7 +343,9 @@ class _VisitorEditState extends State<VisitorEdit> {
 Future errorDialog(BuildContext context) {
   return showDialog(
     builder: (context) {
-      return AlertDialog(
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child:       AlertDialog(
         title: Text('Invalid Form'),
         content: Text("All details are required to submit the form"),
         actions: <Widget>[
@@ -319,7 +355,8 @@ Future errorDialog(BuildContext context) {
                 Navigator.of(context).pop();
               })
         ],
-      );
+      ));
+
     },
     context: context,
   );

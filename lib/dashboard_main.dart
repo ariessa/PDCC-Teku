@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdcc_teku/dashboard_daily-visitors_card.dart';
-import 'package:pdcc_teku/dashboard_weekly-visitors_card.dart';
+import 'package:pdcc_teku/dashboard_daily-check-ins_card.dart';
+import 'package:pdcc_teku/dashboard_weekly-check-ins_card.dart';
 import 'package:pdcc_teku/menu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pdcc_teku/misc.dart';
@@ -34,7 +34,9 @@ class _DashboardMainState extends State<DashboardMain> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         leading: GestureDetector(
@@ -124,7 +126,7 @@ class _DashboardMainState extends State<DashboardMain> {
           ],
         ),
       )),
-    );
+    ));
   }
 
   Widget _buildChart(BuildContext context, List<Task> taskdata) {

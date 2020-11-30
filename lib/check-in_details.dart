@@ -22,11 +22,13 @@ class CheckInDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Material(
       color: Color(0xfff1f9ff),
       child: SingleChildScrollView(
         child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Expanded(
@@ -210,6 +212,6 @@ class CheckInDetails extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

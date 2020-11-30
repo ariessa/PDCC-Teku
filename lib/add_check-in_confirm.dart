@@ -45,7 +45,9 @@ class _AddCheckInConfirmState extends State<AddCheckInConfirm> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           leading: GestureDetector(
@@ -359,6 +361,8 @@ class _AddCheckInConfirmState extends State<AddCheckInConfirm> {
               )
             ],
           ),
-        )));
+        ))));
+    
+
   }
 }

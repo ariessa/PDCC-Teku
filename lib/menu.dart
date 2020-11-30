@@ -17,7 +17,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Material(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Material(
         child: ListView(
       children: <Widget>[
         Container(
@@ -94,7 +96,7 @@ class _HomePageState extends State<HomePage> {
               )),
         ),
       ],
-    ));
+    )));
   }
 }
 
@@ -105,7 +107,9 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
     context: context,
     barrierDismissible: false, // user must tap button to close dialog!
     builder: (BuildContext context) {
-      return AlertDialog(
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child: AlertDialog(
         title: Text('Log Out'),
         content: const Text('Are you sure you want to log out?'),
         actions: <Widget>[
@@ -125,7 +129,8 @@ Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async {
             },
           )
         ],
-      );
+      ));
+
     },
   );
 }

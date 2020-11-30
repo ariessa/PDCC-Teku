@@ -16,7 +16,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
         body: SingleChildScrollView(
       child: Container(
           child: Form(
@@ -129,12 +131,6 @@ class _LoginPageState extends State<LoginPage> {
 
                       // Validate will return true if is valid, or false if invalid.
                       if (form.validate()) {
-
-                        // Check if email or password is empty or not
-
-                        // Check if email is valid of not
-
-                        // If both checks passed, go to try
                         try {
                           await auth.FirebaseAuth.instance
                               .signInWithEmailAndPassword(
@@ -148,11 +144,10 @@ class _LoginPageState extends State<LoginPage> {
                             _showMyDialog(context, 'Wrong password provided for that user.');
                           }
                         }
-                        // if email is not of valid format
                       }
                     }),
               ]))),
-    ));
+    )));
   }
 
 Future<void> _showMyDialog(BuildContext context, String message) async {
@@ -160,7 +155,9 @@ Future<void> _showMyDialog(BuildContext context, String message) async {
     context: context,
     barrierDismissible: false, // user must tap button!
     builder: (BuildContext context) {
-      return AlertDialog(
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child:       AlertDialog(
         title: Text('Invalid Login'),
         content: SingleChildScrollView(
           child: ListBody(
@@ -177,7 +174,7 @@ Future<void> _showMyDialog(BuildContext context, String message) async {
             },
           ),
         ],
-      );
+      ));
     },
   );
 }

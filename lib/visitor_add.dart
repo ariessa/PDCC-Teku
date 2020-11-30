@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pdcc_teku/visitor_added.dart';
-import 'package:pdcc_teku/misc.dart' show EmailValidator, SizeConfig;
+import 'package:pdcc_teku/misc.dart' show EmailValidator, SizeConfig, PhoneNumberValidator;
 
 class VisitorAdd extends StatefulWidget {
   @override
@@ -22,7 +22,9 @@ class _VisitorAddState extends State<VisitorAdd> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child:     Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           leading: GestureDetector(
@@ -61,6 +63,7 @@ class _VisitorAddState extends State<VisitorAdd> {
                               value.isEmpty ? 'First Name is required' : null,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(20),
+                            FilteringTextInputFormatter.deny(RegExp("[0-9]")),
                           ],
                           decoration: InputDecoration(
                             labelText: "First Name",
@@ -86,6 +89,7 @@ class _VisitorAddState extends State<VisitorAdd> {
                               value.isEmpty ? 'Last Name is required' : null,
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(20),
+                            FilteringTextInputFormatter.deny(RegExp("[0-9]")),
                           ],
                           decoration: InputDecoration(
                             labelText: "Last Name",
@@ -132,10 +136,18 @@ class _VisitorAddState extends State<VisitorAdd> {
                       right: SizeConfig.blockSizeHorizontal * 7.5),
                       child: TextFormField(
                           onSaved: (value) => _phoneNumber = value,
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.phone,
                           autofocus: true,
-                          validator: (value) =>
-                              value.isEmpty ? 'Phone Number is required' : null,
+                          validator: (value) {
+                            if (value.isEmpty) {
+                        return 'Phone Number is required';
+                      }
+                      if (!value.isValidPhoneNumber()) {
+                        return 'Invalid phone number';
+                      }
+                          return null;
+                          },
+
                           inputFormatters: [
                             LengthLimitingTextInputFormatter(12),
                           ],
@@ -266,14 +278,16 @@ class _VisitorAddState extends State<VisitorAdd> {
                       },
                     ),
                   ]))),
-        ));
+        )));
   }
 }
 
 Future errorDialog(BuildContext context) {
   return showDialog(
     builder: (context) {
-      return AlertDialog(
+      return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child:       AlertDialog(
         title: Text('Invalid Form'),
         content: Text("All details are required to submit the form"),
         actions: <Widget>[
@@ -283,7 +297,8 @@ Future errorDialog(BuildContext context) {
                 Navigator.of(context).pop();
               })
         ],
-      );
+      ));
+
     },
     context: context,
   );

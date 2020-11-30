@@ -11,7 +11,9 @@ class _AddCheckInCompletedState extends State<AddCheckInCompleted> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
           title: Text(
@@ -93,6 +95,6 @@ class _AddCheckInCompletedState extends State<AddCheckInCompleted> {
 
             ],
           ),
-        )));
+        ))));
   }
 }
