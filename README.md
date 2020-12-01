@@ -10,9 +10,11 @@ The features of this app are as follows:
 
 ● Log In 
 
+● Main Menu
+
 ● Dashboard
- - View total daily visitors
- - View total monthly visitors
+ - View total daily check in
+ - View total monthly check in
  - View total visitors by gender
  
 ● Manage Check In
@@ -29,18 +31,14 @@ The features of this app are as follows:
 
 ## Installing Release Builds
 
-> **_NOTE:_**  Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
+1. Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
 
-Download the specific release APK based on your device's CPU architecture and install it.
+2. Download either:
+   - Specific release APK based on your device's CPU architecture
+   - Fat APK (can be installed on `ARM`, `ARM64`, and `x86_64`)
+   - AppBundle (can be installed on `ARM`, `ARM64`, and `x86_64`)
 
-+ [ARM](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-armeabi-v7a-release.apk)
-+ [ARM64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-arm64-v8a-release.apk)
-+ [x86_64](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-x86_64-release.apk)
-
-Alternately, you can also download the appbundle or fat APK.
-
-+ [AppBundle](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.aab)
-+ [Fat APK](https://github.com/ariessa/pdcc_teku/releases/download/v1.0-alpha/app-release.apk)
+3. Install it on your device or emulator.
 
 > **_WARNING I:_** There is no apk for x86 Android. This is because Flutter does not currently support building for x86 Android. Refer to this [issue](https://github.com/flutter/flutter/issues/9253) on Github.
 
@@ -49,7 +47,9 @@ Alternately, you can also download the appbundle or fat APK.
 
 ## Installing Debug Builds
 
-> **_NOTE:_**  Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
+> **_NOTE I:_**  Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
+
+> **_NOTE II:_** If debug builds are not available, please rebuild them on your own.
 
 Download the specific release APK based on your device's CPU architecture and install it.
 
@@ -62,6 +62,8 @@ Or, you can download the fat APK that can be installed on `ARM`, `ARM64`, and `x
 + [Fat APK](build/app/outputs/apk/debug/app-universal-debug.apk)
 
 > **_WARNING I:_** There is no apk for x86 Android. This is because Flutter does not currently support building for x86 Android. Refer to this [issue](https://github.com/flutter/flutter/issues/9253) on Github.
+
+> **_WARNING II_** These builds are intended for debugging purposes only. Usage outside of debugging may cause unexpected crashes and performance lags. 
 
 </br> 
 
