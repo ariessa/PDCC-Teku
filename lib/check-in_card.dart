@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pdcc_teku/misc.dart';
 import 'package:pdcc_teku/check-in_details.dart';
+import 'package:pdcc_teku/misc.dart';
 
 class CheckInCard extends StatelessWidget {
   CheckInCard(
@@ -43,14 +43,14 @@ class CheckInCard extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
+                          top: SizeConfig.blockSizeVertical * 1,
+                          bottom: SizeConfig.blockSizeVertical * 1,
+                          left: SizeConfig.blockSizeHorizontal * 2.5,
                           right: SizeConfig.blockSizeHorizontal * 2.5),
                       child: Image(
                         width: SizeConfig.blockSizeHorizontal * 18,
                         height: SizeConfig.blockSizeVertical * 8,
-                        image: AssetImage('assets/CheckIn.png'),
+                        image: AssetImage('assets/CheckInCard.png'),
                       ),
                     ),
                     SizedBox(
@@ -62,10 +62,10 @@ class CheckInCard extends StatelessWidget {
                           Container(
                             width: SizeConfig.blockSizeHorizontal * 30,
                             padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                                top: SizeConfig.blockSizeVertical * 1,
+                                bottom: SizeConfig.blockSizeVertical * 1,
+                                left: SizeConfig.blockSizeHorizontal * 2.5,
+                                right: SizeConfig.blockSizeHorizontal * 2.5),
                             child: Text(
                               firstName.toString().toUpperCase(),
                               textAlign: TextAlign.start,
@@ -79,10 +79,10 @@ class CheckInCard extends StatelessWidget {
                           Container(
                             width: SizeConfig.blockSizeHorizontal * 30,
                             padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                                top: SizeConfig.blockSizeVertical * 1,
+                                bottom: SizeConfig.blockSizeVertical * 1,
+                                left: SizeConfig.blockSizeHorizontal * 2.5,
+                                right: SizeConfig.blockSizeHorizontal * 2.5),
                             child: Text(
                               lastName.toString().toUpperCase(),
                               textAlign: TextAlign.start,
@@ -95,18 +95,15 @@ class CheckInCard extends StatelessWidget {
                           Container(
                             width: SizeConfig.blockSizeHorizontal * 30,
                             padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                                top: SizeConfig.blockSizeVertical * 1,
+                                bottom: SizeConfig.blockSizeVertical * 1,
+                                left: SizeConfig.blockSizeHorizontal * 2.5,
+                                right: SizeConfig.blockSizeHorizontal * 2.5),
                             child: Text(
                               checkInDate.toString().toUpperCase(),
                               textAlign: TextAlign.start,
                               textScaleFactor: 0.9,
-                              style: TextStyle(
-                                color: Color(0xff2699fb),
-                                // fontWeight: FontWeight.bold
-                              ),
+                              style: TextStyle(color: Color(0xff2699fb)),
                             ),
                           )
                         ]),
@@ -116,10 +113,10 @@ class CheckInCard extends StatelessWidget {
                         Container(
                           width: SizeConfig.blockSizeHorizontal * 30,
                           padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                              top: SizeConfig.blockSizeVertical * 1,
+                              bottom: SizeConfig.blockSizeVertical * 1,
+                              left: SizeConfig.blockSizeHorizontal * 2.5,
+                              right: SizeConfig.blockSizeHorizontal * 2.5),
                           child: Text("FIRST NAME",
                               textAlign: TextAlign.end,
                               textScaleFactor: 0.9,
@@ -130,10 +127,10 @@ class CheckInCard extends StatelessWidget {
                         Container(
                           width: SizeConfig.blockSizeHorizontal * 30,
                           padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                              top: SizeConfig.blockSizeVertical * 1,
+                              bottom: SizeConfig.blockSizeVertical * 1,
+                              left: SizeConfig.blockSizeHorizontal * 2.5,
+                              right: SizeConfig.blockSizeHorizontal * 2.5),
                           child: Text(
                             "LAST NAME",
                             textScaleFactor: 0.9,
@@ -146,10 +143,10 @@ class CheckInCard extends StatelessWidget {
                         Container(
                           width: SizeConfig.blockSizeHorizontal * 20,
                           padding: EdgeInsets.only(
-                          top: SizeConfig.blockSizeVertical * 1, 
-                          bottom: SizeConfig.blockSizeVertical * 1, 
-                          left: SizeConfig.blockSizeHorizontal * 2.5, 
-                          right: SizeConfig.blockSizeHorizontal * 2.5),
+                              top: SizeConfig.blockSizeVertical * 1,
+                              bottom: SizeConfig.blockSizeVertical * 1,
+                              left: SizeConfig.blockSizeHorizontal * 2.5,
+                              right: SizeConfig.blockSizeHorizontal * 2.5),
                           child: Text(
                             "DATE",
                             textScaleFactor: 0.9,

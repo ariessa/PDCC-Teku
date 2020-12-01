@@ -146,7 +146,6 @@
 -keep class com.google.firebase.auth.internal.GenericIdpActivity { <init>(); }
 -keep class com.google.firebase.auth.internal.RecaptchaActivity { <init>(); }
 -keep class com.google.firebase.components.ComponentDiscoveryService { <init>(); }
--keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(); }
 -keep class com.google.firebase.provider.FirebaseInitProvider { <init>(); }
 -keep class io.flutter.embedding.android.FlutterActivity { <init>(); }
 
@@ -159,26 +158,6 @@
 # The proguard configuration file for the following section is C:\Users\Ariessa\.gradle\caches\transforms-2\files-2.1\c63d2c2f1bf86e796af665667ae4aeee\jetified-firebase-encoders-json-17.0.0\proguard.txt
 
 # End of content from C:\Users\Ariessa\.gradle\caches\transforms-2\files-2.1\c63d2c2f1bf86e796af665667ae4aeee\jetified-firebase-encoders-json-17.0.0\proguard.txt
-# The proguard configuration file for the following section is C:\Users\Ariessa\.gradle\caches\transforms-2\files-2.1\2b22e8e778892b73d5ad65148a4f1e60\jetified-firebase-functions-19.1.0\proguard.txt
--dontwarn okio.**
-
-# These rules come from:
-# https://github.com/square/okhttp/blob/master/okhttp/src/main/resources/META-INF/proguard/okhttp3.pro
-
-# JSR 305 annotations are for embedding nullability information.
--dontwarn javax.annotation.**
-
-# A resource is loaded with a relative path so the package of this class must be preserved.
--keepnames class okhttp3.internal.publicsuffix.PublicSuffixDatabase
-
-# Animal Sniffer compileOnly dependency to ensure APIs are compatible with older versions of Java.
--dontwarn org.codehaus.mojo.animal_sniffer.*
-
-# OkHttp platform used only on JVM and when Conscrypt dependency is available.
--dontwarn okhttp3.internal.platform.ConscryptPlatform
-
-
-# End of content from C:\Users\Ariessa\.gradle\caches\transforms-2\files-2.1\2b22e8e778892b73d5ad65148a4f1e60\jetified-firebase-functions-19.1.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\Ariessa\.gradle\caches\transforms-2\files-2.1\04bd8e86bdcc272814c102c7d09bb247\jetified-firebase-auth-20.0.1\proguard.txt
 -dontwarn com.google.appengine.api.**
 -dontwarn okio.**

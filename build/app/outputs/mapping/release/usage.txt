@@ -29,6 +29,7 @@ com.google.firebase.firestore.local.EncodedPath:
     private static final char ENCODED_ESCAPE
 androidx.core.view.accessibility.AccessibilityViewCommand$MoveHtmlArguments
 androidx.core.provider.FontsContractCompat$4$2
+com.google.android.gms.internal.common.zze
 io.grpc.android.AndroidChannelBuilder:
     public static io.grpc.android.AndroidChannelBuilder forTarget(java.lang.String)
     public static io.grpc.android.AndroidChannelBuilder forAddress(java.lang.String,int)
@@ -92,7 +93,6 @@ com.google.firestore.v1.Value$Builder:
 javax.annotation.CheckReturnValue
 com.google.api.JwtLocation$InCase
 com.google.common.hash.LittleEndianByteArray$JavaLittleEndianBytes$1
-com.google.firebase.functions.R$layout
 com.google.protobuf.GeneratedMessageLite:
     private final void ensureUnknownFieldsInitialized()
     public static com.google.protobuf.GeneratedMessageLite$GeneratedExtension newSingularGeneratedExtension(com.google.protobuf.MessageLite,java.lang.Object,com.google.protobuf.MessageLite,com.google.protobuf.Internal$EnumLiteMap,int,com.google.protobuf.WireFormat$FieldType,java.lang.Class)
@@ -327,12 +327,6 @@ com.google.gson.internal.ConstructorConstructor$14
 androidx.fragment.R$style
 androidx.core.database.CursorWindowCompat
 com.google.common.collect.MapMakerInternalMap$StrongKeyStrongValueEntry$Helper
-com.google.firebase.iid.WakeLockHolder:
-    public void <init>()
-    public static void completeWakefulIntent(android.content.Intent)
-    public static void acquireWakeLock(android.content.Intent,long)
-    public static void initWakeLock(android.content.Context)
-    public static void reset()
 androidx.fragment.app.FragmentStatePagerAdapter
 okio.Options
 com.google.protobuf.UnknownFieldSetLite:
@@ -925,7 +919,6 @@ com.google.common.cache.CacheBuilderSpec$DurationParser
 okhttp3.internal.cache.DiskLruCache$Editor$1
 com.google.android.gms.internal.firebase-auth-api.zzaba:
     void <init>()
-com.google.firebase.functions.R$color
 com.google.common.collect.TreeRangeSet$RangesByUpperBound$1
 com.google.common.primitives.Doubles$DoubleArrayAsList
 com.google.firebase.firestore.local.MemoryRemoteDocumentCache:
@@ -994,6 +987,7 @@ okhttp3.OkHttpClient$Builder:
     public okhttp3.OkHttpClient$Builder callTimeout(java.time.Duration)
     public okhttp3.OkHttpClient$Builder connectTimeout(long,java.util.concurrent.TimeUnit)
     public okhttp3.OkHttpClient$Builder connectTimeout(java.time.Duration)
+    public okhttp3.OkHttpClient$Builder readTimeout(long,java.util.concurrent.TimeUnit)
     public okhttp3.OkHttpClient$Builder readTimeout(java.time.Duration)
     public okhttp3.OkHttpClient$Builder writeTimeout(long,java.util.concurrent.TimeUnit)
     public okhttp3.OkHttpClient$Builder writeTimeout(java.time.Duration)
@@ -1058,9 +1052,7 @@ com.google.firebase.storage.FileDownloadTask:
     long getDownloadedSizeInBytes()
     static final int PREFERRED_CHUNK_SIZE
     private static final java.lang.String TAG
-com.google.android.gms.stats.WakeLock:
-    public void release()
-    public boolean isHeld()
+com.google.android.gms.stats.WakeLock
 com.google.android.datatransport.runtime.TransportRuntime:
     static void withInstance(com.google.android.datatransport.runtime.TransportRuntimeComponent,java.util.concurrent.Callable)
     public com.google.android.datatransport.TransportFactory newFactory(java.lang.String)
@@ -1099,8 +1091,6 @@ com.google.protobuf.GeneratedMessageLite$ExtensionDescriptor:
     void <init>(com.google.protobuf.Internal$EnumLiteMap,int,com.google.protobuf.WireFormat$FieldType,boolean,boolean)
 io.grpc.internal.AbstractServerStream
 androidx.core.R$styleable
-com.google.firebase.iid.internal.FirebaseInstanceIdInternal:
-    public abstract java.lang.String getId()
 com.google.common.util.concurrent.Service$State$2
 com.google.common.collect.Multimaps$AsMap$EntrySet$1
 com.google.firebase.crashlytics.R$attr
@@ -1172,7 +1162,6 @@ com.google.protobuf.StringValue$Builder
 androidx.core.provider.SelfDestructiveThread
 com.google.common.collect.MultimapBuilder$TreeSetSupplier
 com.google.common.hash.Funnels$StringCharsetFunnel$SerializedForm
-com.google.firebase.functions.R$id
 com.squareup.okhttp.internal.http.RequestLine
 com.google.common.primitives.Floats$FloatArrayAsList
 com.google.common.io.ByteStreams$LimitedInputStream
@@ -1290,6 +1279,7 @@ com.google.firestore.v1.Document:
     public boolean hasUpdateTime()
 com.google.android.gms.common.images.ImageManager$zab
 com.google.gson.internal.LinkedTreeMap$KeySet$1
+com.google.android.gms.internal.common.zzf
 javax.inject.Named
 com.google.common.collect.SortedMapDifference
 com.google.common.base.AbstractIterator$State
@@ -1367,8 +1357,6 @@ com.google.common.collect.TreeRangeMap$SubRangeMap$SubRangeMapAsMap
 com.google.gson.internal.LinkedTreeMap$1
 com.google.common.collect.Synchronized$SynchronizedSortedSet
 com.google.common.graph.ImmutableNetwork$3
-com.google.firebase.iid.InstanceIdResult:
-    public abstract java.lang.String getId()
 com.google.android.gms.common.server.response.zab
 com.google.firestore.v1.RunQueryRequest
 com.google.api.ContextRule
@@ -1449,7 +1437,6 @@ com.google.api.OAuthRequirements
 com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Application:
     protected com.google.firebase.crashlytics.internal.model.CrashlyticsReport$Session$Application$Builder toBuilder()
 com.google.firestore.v1.DeleteDocumentRequest$1
-com.google.android.gms.cloudmessaging.IMessengerCompat$Impl
 com.google.common.util.concurrent.SimpleTimeLimiter$1$1
 com.google.rpc.context.AttributeContext$ResponseOrBuilder
 com.squareup.okhttp.Headers:
@@ -1821,9 +1808,6 @@ com.google.firestore.v1.FirestoreGrpc$FirestoreFutureStub
 com.squareup.okhttp.Interceptor$Chain
 androidx.core.R$attr
 androidx.annotation.ColorRes
-com.google.android.gms.cloudmessaging.IMessengerCompat:
-    public static final java.lang.String DESCRIPTOR
-    public static final int TRANSACTION_SEND
 androidx.core.content.res.GrowingArrayUtils
 com.google.type.LatLng:
     private void clearLatitude()
@@ -2014,6 +1998,7 @@ com.google.firebase.database.collection.LLRBEmptyNode:
 okhttp3.internal.ws.RealWebSocket$2
 com.google.firebase.firestore.util.AsyncQueue$$Lambda$5
 com.google.common.hash.Hashing$Sha512Holder
+com.google.android.gms.security.ProviderInstaller$ProviderInstallListener
 com.google.common.hash.HashingInputStream
 com.google.common.collect.TransformedListIterator
 com.google.protobuf.MutabilityOracle
@@ -2065,6 +2050,7 @@ com.google.common.reflect.ClassPath
 com.google.type.DayOfWeekProto
 com.google.firebase.firestore.local.IndexCursor
 okhttp3.Cache$CacheResponseBody
+com.google.android.gms.internal.common.zzg
 androidx.core.app.ActivityCompat:
     protected void <init>()
     public static void setPermissionCompatDelegate(androidx.core.app.ActivityCompat$PermissionCompatDelegate)
@@ -2362,7 +2348,6 @@ io.grpc.internal.ForwardingConnectionClientTransport:
     public io.grpc.Attributes getAttributes()
     public com.google.common.util.concurrent.ListenableFuture getStats()
 com.google.common.base.Functions$ConstantFunction
-com.google.android.gms.cloudmessaging.CloudMessage$MessagePriority
 com.google.api.HttpBodyProto
 com.google.common.collect.Tables$TransposeTable$1
 com.google.api.MonitoringProto
@@ -2885,6 +2870,7 @@ com.google.firebase.firestore.remote.FirestoreCallCredentials:
     private static final java.lang.String LOG_TAG
 com.google.firebase.encoders.FieldDescriptor
 com.google.android.gms.tasks.zzu:
+    public final java.lang.Object getResult(java.lang.Class)
     public final com.google.android.gms.tasks.Task addOnSuccessListener(android.app.Activity,com.google.android.gms.tasks.OnSuccessListener)
     public final com.google.android.gms.tasks.Task addOnFailureListener(android.app.Activity,com.google.android.gms.tasks.OnFailureListener)
     public final com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
@@ -3162,8 +3148,6 @@ io.grpc.MethodDescriptor:
     public boolean isSampledToLocalTracing()
     public io.grpc.MethodDescriptor$Builder toBuilder()
     public io.grpc.MethodDescriptor$Builder toBuilder(io.grpc.MethodDescriptor$Marshaller,io.grpc.MethodDescriptor$Marshaller)
-com.google.firebase.iid.WithinAppServiceBinder:
-    public void <init>(com.google.firebase.iid.WithinAppServiceBinder$IntentHandler)
 com.google.android.gms.measurement.AppMeasurementContentProvider
 com.google.firebase.firestore.model.DatabaseId:
     public static com.google.firebase.firestore.model.DatabaseId forProject(java.lang.String)
@@ -3191,6 +3175,7 @@ io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller:
 com.google.gson.internal.bind.SqlDateTypeAdapter
 io.grpc.InternalClientInterceptors
 com.google.gson.Gson$3
+com.google.android.gms.internal.common.zzh
 com.google.common.base.Present
 com.google.common.primitives.Bytes
 io.perfmark.Impl:
@@ -3710,16 +3695,6 @@ com.google.firebase.firestore.core.Target:
     public static final long NO_LIMIT
 com.google.android.gms.internal.firebase-auth-api.zzqq
 androidx.core.internal.view.SupportMenuItem
-com.google.firebase.iid.ServiceStarter:
-    public static android.app.PendingIntent createMessagingPendingIntent(android.content.Context,int,android.content.Intent,int)
-    public static void startMessagingServiceViaReceiver(android.content.Context,android.content.Intent)
-    private static android.content.Intent wrapServiceIntent(android.content.Context,java.lang.String,android.content.Intent)
-    public static android.content.Intent unwrapServiceIntent(android.content.Intent)
-    public static void setForTesting(com.google.firebase.iid.ServiceStarter)
-    public android.content.Intent getMessagingEvent()
-    public static final int SUCCESS
-    public static final int ERROR_UNKNOWN
-    public static final java.lang.String ACTION_MESSAGING_EVENT
 com.google.firebase.analytics.FirebaseAnalytics:
     private final java.util.concurrent.ExecutorService zza()
     static synthetic com.google.android.gms.internal.measurement.zzag zza(com.google.firebase.analytics.FirebaseAnalytics)
@@ -3786,6 +3761,7 @@ com.google.common.util.concurrent.AbstractFuture$AtomicHelper
 com.google.common.collect.TreeRangeSet$ComplementRangesByLowerBound
 com.google.common.io.ByteSource$ByteArrayByteSource
 com.google.common.collect.AbstractSortedSetMultimap
+com.google.android.gms.common.util.concurrent.NamedThreadFactory
 io.grpc.internal.TransportTracer$FlowControlWindows
 com.google.common.net.InetAddresses
 androidx.fragment.app.FragmentManager$BackStackEntry
@@ -3916,11 +3892,6 @@ com.google.common.collect.ForwardingSortedMultiset$StandardElementSet
 androidx.core.text.PrecomputedTextCompat
 com.google.firebase.firestore.local.SQLiteMutationQueue:
     private static final int BLOB_MAX_INLINE_LENGTH
-com.google.firebase.functions.FirebaseFunctions:
-    public static com.google.firebase.functions.FirebaseFunctions getInstance(com.google.firebase.FirebaseApp)
-    public static com.google.firebase.functions.FirebaseFunctions getInstance(java.lang.String)
-    public static com.google.firebase.functions.FirebaseFunctions getInstance()
-    public void useEmulator(java.lang.String,int)
 com.google.protobuf.DescriptorProtos$MethodOptions
 com.google.common.primitives.ImmutableLongArray$1
 com.google.common.annotations.VisibleForTesting
@@ -4050,6 +4021,7 @@ com.google.common.graph.AbstractBaseGraph$IncidentEdgeSet$Directed
 com.google.android.gms.common.server.response.zan
 com.google.android.datatransport.runtime.dagger.Module
 com.google.android.gms.tasks.Task:
+    public abstract java.lang.Object getResult(java.lang.Class)
     public abstract com.google.android.gms.tasks.Task addOnSuccessListener(android.app.Activity,com.google.android.gms.tasks.OnSuccessListener)
     public abstract com.google.android.gms.tasks.Task addOnFailureListener(android.app.Activity,com.google.android.gms.tasks.OnFailureListener)
     public com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
@@ -4103,9 +4075,6 @@ com.google.protobuf.UInt64Value
 io.grpc.internal.FailingClientStream:
     io.grpc.Status getError()
 io.grpc.stub.ServerCalls$ClientStreamingMethod
-com.google.firebase.functions.Serializer:
-    static final java.lang.String LONG_TYPE
-    static final java.lang.String UNSIGNED_LONG_TYPE
 com.google.api.FieldBehavior$FieldBehaviorVerifier
 com.google.common.collect.HashBiMap$InverseEntrySet
 com.google.common.collect.Sets$DescendingSet
@@ -4184,7 +4153,6 @@ androidx.core.content.PermissionChecker:
     public static final int PERMISSION_DENIED
     public static final int PERMISSION_DENIED_APP_OP
 com.google.common.primitives.UnsignedBytes$LexicographicalComparatorHolder
-com.google.firebase.iid.FirebaseInstanceIdService
 com.google.api.MetricOrBuilder
 com.google.common.base.Verify:
     public static void verify(boolean)
@@ -4233,6 +4201,7 @@ io.grpc.LoadBalancerRegistry:
     public synchronized void deregister(io.grpc.LoadBalancerProvider)
     synchronized java.util.Map providers()
 com.google.firebase.components.Component$Builder:
+    public com.google.firebase.components.Component$Builder alwaysEager()
     public com.google.firebase.components.Component$Builder publishes(java.lang.Class)
 com.google.common.collect.Lists$TransformingRandomAccessList
 com.google.api.AuthenticationRule$1
@@ -4260,8 +4229,7 @@ io.perfmark.Link:
     public void link()
 com.google.common.graph.AbstractGraphBuilder
 com.google.android.gms.common.R
-com.google.firebase.installations.AutoValue_InstallationTokenResult:
-    public com.google.firebase.installations.InstallationTokenResult$Builder toBuilder()
+com.google.firebase.installations.AutoValue_InstallationTokenResult
 com.google.gson.stream.MalformedJsonException:
     public void <init>(java.lang.String,java.lang.Throwable)
     public void <init>(java.lang.Throwable)
@@ -4372,6 +4340,7 @@ javax.annotation.Nonnegative
 com.google.common.base.Functions$FunctionComposition
 com.google.android.gms.common.api.Api$SimpleClient:
     public abstract android.content.Context getContext()
+com.google.android.gms.stats.WakeLock$zza
 com.google.protobuf.Struct$FieldsDefaultEntryHolder
 com.google.firestore.v1.WriteResult$Builder:
     public boolean hasUpdateTime()
@@ -4698,7 +4667,6 @@ com.google.firestore.v1.CommitRequest:
     public com.google.protobuf.ByteString getTransaction()
 com.google.protobuf.DescriptorProtos$MethodOptionsOrBuilder
 com.google.api.Service$1
-com.google.firebase.functions.R$string
 com.google.common.util.concurrent.AbstractFuture$Failure
 androidx.core.app.NotificationCompat$DecoratedCustomViewStyle
 io.grpc.stub.InternalClientCalls
@@ -4992,9 +4960,6 @@ io.grpc.NameResolverRegistry:
     public synchronized void deregister(io.grpc.NameResolverProvider)
 com.google.protobuf.BinaryWriter$UnsafeDirectWriter
 com.squareup.okhttp.internal.DiskLruCache$Editor$1
-com.google.firebase.iid.Store:
-    public synchronized void deleteToken(java.lang.String,java.lang.String,java.lang.String)
-    public synchronized long getCreationTime(java.lang.String)
 com.google.common.graph.ImmutableValueGraph
 com.google.firebase.storage.UpdateMetadataTask:
     private static final java.lang.String TAG
@@ -5249,7 +5214,6 @@ com.google.firebase.storage.internal.Slashes:
 com.google.common.collect.ImmutableTable$Builder
 com.google.android.datatransport.runtime.dagger.multibindings.ClassKey
 com.google.common.reflect.TypeToken$TypeCollector
-com.google.firebase.functions.R$drawable
 com.google.android.gms.common.server.response.FastJsonResponse$Field
 androidx.core.view.DisplayCutoutCompat
 com.squareup.okhttp.internal.framed.Http2$ContinuationSource
@@ -5274,9 +5238,7 @@ com.google.common.hash.Hashing$1
 com.google.protobuf.DescriptorProtos$FileDescriptorProtoOrBuilder
 com.google.common.base.CharMatcher$RangesMatcher
 com.google.j2objc.annotations.AutoreleasePool
-com.google.firebase.installations.AutoValue_InstallationTokenResult$Builder:
-    private void <init>(com.google.firebase.installations.InstallationTokenResult)
-    synthetic void <init>(com.google.firebase.installations.InstallationTokenResult,com.google.firebase.installations.AutoValue_InstallationTokenResult$1)
+com.google.firebase.installations.AutoValue_InstallationTokenResult$Builder
 com.google.protobuf.ExtensionSchema:
     abstract void setExtensions(java.lang.Object,com.google.protobuf.FieldSet)
 com.google.common.collect.AbstractMapBasedMultimap$KeySet$1
@@ -5451,9 +5413,12 @@ okhttp3.internal.http2.Http2Stream:
 com.google.common.collect.Multimaps$TransformedEntriesMultimap$1
 com.google.common.math.BigIntegerMath$1
 com.google.firebase.installations.FirebaseInstallations:
+    private com.google.android.gms.tasks.Task addGetAuthTokenListener()
     private java.lang.Void deleteFirebaseInstallationId()
+    static synthetic void lambda$getToken$1(com.google.firebase.installations.FirebaseInstallations,boolean)
     static synthetic java.lang.Void access$lambda$0(com.google.firebase.installations.FirebaseInstallations)
     java.lang.String getName()
+    public com.google.android.gms.tasks.Task getToken(boolean)
     public com.google.android.gms.tasks.Task delete()
     private static final java.lang.String LOCKFILE_NAME_GENERATE_FID
     private static final java.lang.String CHIME_FIREBASE_APP_NAME
@@ -5604,12 +5569,7 @@ com.google.protobuf.BytesValue$Builder
 com.google.protobuf.DoubleValueOrBuilder
 androidx.annotation.AnimRes
 com.google.common.collect.Tables$TransformedTable$3
-com.google.firebase.iid.InstanceIdResultImpl:
-    public final java.lang.String getId()
 com.google.api.MonitoredResourceMetadata
-com.google.firebase.functions.HttpsCallOptions:
-    public long getTimeout()
-    private static final long DEFAULT_TIMEOUT
 com.google.gson.JsonObject
 com.google.protobuf.Api
 com.google.android.datatransport.cct.internal.LogResponse:
@@ -5619,23 +5579,12 @@ com.google.firebase.database.collection.LLRBValueNode:
     public void inOrderTraversal(com.google.firebase.database.collection.LLRBNode$NodeVisitor)
     public boolean shortCircuitingInOrderTraversal(com.google.firebase.database.collection.LLRBNode$ShortCircuitingNodeVisitor)
     public boolean shortCircuitingReverseOrderTraversal(com.google.firebase.database.collection.LLRBNode$ShortCircuitingNodeVisitor)
-com.google.firebase.iid.FirebaseInstanceId:
-    private void startSyncIfNecessary()
-    public static synchronized void clearInstancesForTest()
-    public java.lang.String getId()
-    public long getCreationTime()
-    public com.google.android.gms.tasks.Task getInstanceId()
-    public void deleteInstanceId()
-    public void deleteToken(java.lang.String,java.lang.String)
-    public boolean isFcmAutoInitEnabled()
-    public void setFcmAutoInitEnabled(boolean)
 com.google.common.escape.ArrayBasedCharEscaper
 androidx.activity.OnBackPressedDispatcher:
     public void <init>()
     public void addCallback(androidx.activity.OnBackPressedCallback)
     public boolean hasEnabledCallbacks()
 com.google.common.graph.MutableNetwork
-com.google.android.gms.cloudmessaging.R
 com.google.common.hash.AbstractNonStreamingHashFunction
 com.google.common.collect.Sets$SetView
 com.google.common.math.MathPreconditions:
@@ -5713,6 +5662,7 @@ com.google.firestore.v1.DocumentMask$Builder:
     public com.google.firestore.v1.DocumentMask$Builder addFieldPathsBytes(com.google.protobuf.ByteString)
 com.google.common.collect.ForwardingCollection
 com.google.common.util.concurrent.CycleDetectingLockFactory$CycleDetectingReentrantLock
+com.google.firebase.installations.InstallationTokenResult$Builder
 com.google.type.LatLngProto
 okhttp3.internal.cache.DiskLruCache$1
 io.grpc.util.TransmitStatusRuntimeExceptionInterceptor$SerializingServerCall$9
@@ -5770,6 +5720,8 @@ com.google.firebase.firestore.core.UserData$ParseAccumulator:
     public com.google.firebase.firestore.core.UserData$Source getDataSource()
 com.google.android.gms.internal.measurement.zzq:
     public void <init>()
+com.google.android.gms.common.GooglePlayServicesRepairableException:
+    public int getConnectionStatusCode()
 io.grpc.internal.ClientCallImpl:
     private void cancelInternal(java.lang.String,java.lang.Throwable)
     public void cancel(java.lang.String,java.lang.Throwable)
@@ -5962,6 +5914,8 @@ com.google.common.util.concurrent.MoreExecutors:
     static synthetic void access$000(java.util.concurrent.ThreadPoolExecutor)
 com.squareup.okhttp.internal.http.Http2xStream$StreamFinishingSource
 com.google.common.util.concurrent.JdkFutureAdapters$ListenableFutureAdapter
+com.google.android.gms.common.wrappers.PackageManagerWrapper:
+    public int checkPermission(java.lang.String,java.lang.String)
 com.google.firebase.firestore.proto.NoDocumentOrBuilder
 com.google.firebase.storage.StorageException:
     public int getHttpResultCode()
@@ -6007,7 +5961,6 @@ com.google.firebase.auth.ActionCodeResult:
     public static final int EMAIL
     public static final int FROM_EMAIL
 com.google.android.gms.dynamic.FragmentWrapper
-com.google.firebase.functions.R$attr
 com.google.common.util.concurrent.FuturesGetChecked$GetCheckedTypeValidatorHolder$ClassValueValidator
 com.google.android.gms.internal.base.zam
 androidx.core.widget.ListViewCompat
@@ -6060,6 +6013,7 @@ com.google.android.gms.common.api.internal.BasePendingResult$CallbackHandler:
     public void <init>()
 okhttp3.Call:
     public abstract okhttp3.Request request()
+    public abstract void enqueue(okhttp3.Callback)
     public abstract void cancel()
     public abstract boolean isExecuted()
     public abstract boolean isCanceled()
@@ -6265,6 +6219,7 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelWriter:
     public static void writeShort(android.os.Parcel,int,short)
     public static void writeIntegerObject(android.os.Parcel,int,java.lang.Integer,boolean)
     public static void writeBigInteger(android.os.Parcel,int,java.math.BigInteger,boolean)
+    public static void writeFloat(android.os.Parcel,int,float)
     public static void writeDouble(android.os.Parcel,int,double)
     public static void writeBigDecimal(android.os.Parcel,int,java.math.BigDecimal,boolean)
     public static void writeByteArrayArray(android.os.Parcel,int,byte[][],boolean)
@@ -6319,10 +6274,6 @@ androidx.annotation.CallSuper
 com.google.common.util.concurrent.AggregateFuture$RunningState$1
 com.google.common.collect.ObjectCountHashMap$MapEntry
 com.google.protobuf.AbstractMessageLite$Builder$LimitedInputStream
-com.google.firebase.functions.HttpsCallableReference:
-    public com.google.android.gms.tasks.Task call()
-    public long getTimeout()
-    public com.google.firebase.functions.HttpsCallableReference withTimeout(long,java.util.concurrent.TimeUnit)
 androidx.loader.R$layout
 com.google.common.util.concurrent.AbstractTransformFuture
 com.google.android.datatransport.runtime.dagger.internal.AbstractMapFactory$Builder
@@ -6456,24 +6407,6 @@ com.google.firebase.firestore.model.BasePath:
     public com.google.firebase.firestore.model.BasePath popFirst()
     public com.google.firebase.firestore.model.BasePath keepFirst(int)
     public java.lang.String getFirstSegment()
-com.google.android.gms.cloudmessaging.CloudMessage:
-    private static int zza(java.lang.String)
-    public final java.lang.String getSenderId()
-    public final java.lang.String getFrom()
-    public final java.lang.String getTo()
-    public final synchronized java.util.Map getData()
-    public final byte[] getRawData()
-    public final java.lang.String getCollapseKey()
-    public final java.lang.String getMessageId()
-    public final java.lang.String getMessageType()
-    public final long getSentTime()
-    public final int getTtl()
-    public final int getOriginalPriority()
-    public final int getPriority()
-    private java.util.Map zzb
-    public static final int PRIORITY_UNKNOWN
-    public static final int PRIORITY_HIGH
-    public static final int PRIORITY_NORMAL
 io.grpc.ServerCallHandler
 com.google.common.util.concurrent.AbstractScheduledService$Scheduler$2
 com.google.common.collect.ConcurrentHashMultiset$3
@@ -6852,6 +6785,7 @@ com.google.common.io.LineReader$1
 com.google.android.gms.internal.common.zzb:
     protected final void zzc(int,android.os.Parcel)
 com.google.api.MetricDescriptor$Builder
+com.google.android.gms.stats.zza
 io.grpc.okhttp.internal.Util$1
 com.google.common.collect.Multimaps$Keys
 com.google.firebase.crashlytics.internal.settings.network.AbstractAppSpiCall:
@@ -6964,7 +6898,6 @@ com.google.firebase.firestore.local.LocalDocumentsView:
     com.google.firebase.firestore.local.RemoteDocumentCache getRemoteDocumentCache()
     com.google.firebase.firestore.local.MutationQueue getMutationQueue()
     com.google.firebase.firestore.local.IndexManager getIndexManager()
-com.google.firebase.functions.R$style
 com.google.android.datatransport.cct.CctTransportBackend:
     private static final java.lang.String LOG_TAG
     private static final int CONNECTION_TIME_OUT
@@ -7093,9 +7026,11 @@ androidx.legacy.coreutils.R$styleable
 androidx.viewpager.R$id
 okhttp3.Request$Builder:
     public okhttp3.Request$Builder url(java.lang.String)
+    public okhttp3.Request$Builder url(java.net.URL)
     public okhttp3.Request$Builder addHeader(java.lang.String,java.lang.String)
     public okhttp3.Request$Builder get()
     public okhttp3.Request$Builder head()
+    public okhttp3.Request$Builder post(okhttp3.RequestBody)
     public okhttp3.Request$Builder delete(okhttp3.RequestBody)
     public okhttp3.Request$Builder delete()
     public okhttp3.Request$Builder put(okhttp3.RequestBody)
@@ -7258,7 +7193,6 @@ com.google.firebase.firestore.proto.NoDocument$Builder:
 com.google.api.ResourceReference
 com.google.android.gms.common.api.internal.zacn
 com.google.common.collect.ConcurrentHashMultiset$1
-com.google.android.gms.cloudmessaging.CloudMessagingReceiver$IntentActionKeys
 com.google.android.gms.common.internal.ICancelToken$Stub
 com.google.common.hash.BloomFilter
 com.google.common.io.CharSink
@@ -7267,7 +7201,6 @@ com.google.common.collect.ImmutableSetMultimap$Builder
 com.google.api.Service
 com.google.common.collect.Maps$ViewCachingAbstractMap
 com.google.protobuf.ExperimentalApi
-com.google.firebase.functions.R$styleable
 com.google.api.LaunchStageProto
 com.google.common.collect.AbstractTable$CellSet
 com.google.protobuf.Enum$1
@@ -7482,6 +7415,8 @@ okhttp3.internal.http2.Hpack$Writer:
 com.google.common.collect.StandardTable$ColumnMap$ColumnMapValues
 com.google.android.gms.security.ProviderInstaller:
     public void <init>()
+    public static void installIfNeededAsync(android.content.Context,com.google.android.gms.security.ProviderInstaller$ProviderInstallListener)
+    static synthetic com.google.android.gms.common.GoogleApiAvailabilityLight zzam()
     public static final java.lang.String PROVIDER_NAME
 com.google.android.gms.common.api.internal.zaag:
     public boolean hasConnectedApi(com.google.android.gms.common.api.Api)
@@ -7643,8 +7578,7 @@ com.google.android.gms.internal.safetynet.zzv
 com.google.gson.internal.PreJava9DateFormatProvider
 com.google.api.SourceInfoOrBuilder
 com.google.common.collect.FluentIterable$2
-com.google.firebase.installations.InstallationTokenResult:
-    public abstract com.google.firebase.installations.InstallationTokenResult$Builder toBuilder()
+com.google.firebase.installations.InstallationTokenResult
 com.google.common.collect.Cut$1
 com.google.api.Distribution$BucketOptions$ExponentialOrBuilder
 okhttp3.internal.cache.FaultHidingSink
@@ -7853,6 +7787,7 @@ androidx.core.view.GestureDetectorCompat$GestureDetectorCompatImplJellybeanMr2
 com.google.common.base.Splitter$SplittingIterator
 com.google.firebase.storage.R$drawable
 okhttp3.RealCall$AsyncCall:
+    void <init>(okhttp3.RealCall,okhttp3.Callback)
     okhttp3.Request request()
 androidx.core.provider.SelfDestructiveThread$ReplyCallback
 com.google.common.collect.CompactHashMap$KeySetView
@@ -8323,7 +8258,6 @@ io.grpc.internal.TransportTracer$FlowControlReader:
     public abstract io.grpc.internal.TransportTracer$FlowControlWindows read()
 com.google.android.gms.common.internal.ClientSettings$OptionalApiSettings:
     public void <init>(java.util.Set)
-com.google.android.gms.cloudmessaging.CloudMessagingReceiver$IntentKeys
 com.google.common.collect.StandardTable$ColumnMap$ColumnMapEntrySet$1
 io.grpc.internal.GrpcUtil$2:
     private static final java.lang.String NAME
@@ -8349,7 +8283,6 @@ com.google.common.graph.DirectedNetworkConnections
 com.google.common.collect.SortedLists$KeyPresentBehavior$2
 com.google.common.base.CaseFormat$3
 com.google.common.collect.Multimaps$TransformedEntriesListMultimap
-com.google.firebase.iid.R
 com.squareup.okhttp.Handshake
 androidx.annotation.VisibleForTesting
 com.google.android.gms.common.server.response.zai
@@ -8522,7 +8455,6 @@ io.grpc.util.TransmitStatusRuntimeExceptionInterceptor$1
 io.grpc.LoadBalancer$Subchannel:
     public io.grpc.Channel asChannel()
     public io.grpc.ChannelLogger getChannelLogger()
-com.google.firebase.functions.R
 com.google.firebase.crashlytics.internal.settings.SettingsJsonTransform:
     public abstract org.json.JSONObject toJson(com.google.firebase.crashlytics.internal.settings.model.SettingsData)
 com.google.android.gms.internal.safetynet.zzu
@@ -8708,6 +8640,7 @@ com.google.protobuf.Timestamp:
     static synthetic void access$200(com.google.protobuf.Timestamp)
     static synthetic void access$400(com.google.protobuf.Timestamp)
 com.google.android.gms.internal.safetynet.zzd
+com.google.android.gms.common.util.zza
 com.google.protobuf.DescriptorProtos$ExtensionRangeOptionsOrBuilder
 com.google.common.primitives.SignedBytes
 com.google.api.BackendRule$AuthenticationCase
@@ -8877,6 +8810,7 @@ com.google.firestore.v1.DocumentDelete:
     public boolean hasReadTime()
 okio.Pipe$PipeSink
 com.google.android.gms.common.api.BooleanResult
+com.google.firebase.installations.AutoValue_InstallationTokenResult$1
 com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1
 com.google.common.util.concurrent.ExecutionList$RunnableExecutorPair
 com.google.protobuf.Internal$ListAdapter
@@ -9122,6 +9056,7 @@ com.google.j2objc.annotations.ObjectiveCName
 androidx.core.graphics.TypefaceCompatBaseImpl
 com.google.common.io.Files$FileByteSource
 com.google.firebase.storage.StorageTask:
+    public com.google.firebase.storage.StorageTask$ProvideError getResult(java.lang.Class)
     public com.google.firebase.storage.StorageTask addOnPausedListener(com.google.firebase.storage.OnPausedListener)
     public com.google.firebase.storage.StorageTask addOnPausedListener(android.app.Activity,com.google.firebase.storage.OnPausedListener)
     public com.google.firebase.storage.StorageTask removeOnPausedListener(com.google.firebase.storage.OnPausedListener)
@@ -9146,6 +9081,7 @@ com.google.firebase.storage.StorageTask:
     public synthetic bridge com.google.android.gms.tasks.Task addOnCompleteListener(android.app.Activity,com.google.android.gms.tasks.OnCompleteListener)
     public synthetic bridge com.google.android.gms.tasks.Task addOnFailureListener(android.app.Activity,com.google.android.gms.tasks.OnFailureListener)
     public synthetic bridge com.google.android.gms.tasks.Task addOnSuccessListener(android.app.Activity,com.google.android.gms.tasks.OnSuccessListener)
+    public synthetic bridge java.lang.Object getResult(java.lang.Class)
     private static final java.lang.String TAG
     static final int INTERNAL_STATE_NOT_STARTED
     static final int INTERNAL_STATE_QUEUED
@@ -9162,9 +9098,7 @@ com.google.firebase.storage.StorageTask:
     static final int STATES_CANCELED
     static final int STATES_COMPLETE
     static final int STATES_INPROGRESS
-com.google.android.gms.common.stats.LoggingConstants:
-    private void <init>()
-    public static final java.lang.String EXTRA_WAKE_LOCK_KEY
+com.google.android.gms.common.stats.LoggingConstants
 com.google.android.gms.safetynet.SafeBrowsingThreat
 com.google.common.collect.ImmutableSet:
     public static com.google.common.collect.ImmutableSet of(java.lang.Object,java.lang.Object)
@@ -9522,6 +9456,7 @@ com.google.android.gms.common.data.DataHolder$Builder:
 com.google.gson.internal.bind.ObjectTypeAdapter$2
 androidx.core.text.ICUCompat
 androidx.core.os.ParcelableCompatCreatorCallbacks
+com.google.android.gms.stats.zzb
 com.google.common.collect.TreeTraverser$1
 io.grpc.NameResolver$ResolutionResultAttr
 com.google.api.ProjectProperties$1
@@ -9727,7 +9662,6 @@ com.google.firebase.storage.network.NetworkRequest:
 com.google.android.gms.safetynet.zzn
 androidx.customview.R$string
 com.google.logging.type.HttpRequestProto
-com.google.firebase.iid.internal.R
 com.google.api.MetricDescriptorOrBuilder
 io.grpc.internal.Stream:
     public abstract boolean isReady()
@@ -10185,6 +10119,7 @@ com.google.common.primitives.Ints:
     static synthetic int access$100(int[],int,int,int)
     public static final int BYTES
     public static final int MAX_POWER_OF_TWO
+com.google.firebase.installations.FirebaseInstallations$$Lambda$2
 com.google.common.cache.ReferenceEntry
 com.google.firebase.database.collection.R$layout
 androidx.versionedparcelable.VersionedParcel$ParcelException
@@ -10494,6 +10429,7 @@ com.google.firestore.v1.StructuredQuery$Filter$FilterTypeCase:
     public static com.google.firestore.v1.StructuredQuery$Filter$FilterTypeCase valueOf(int)
     public int getNumber()
 com.google.api.SystemParameter$Builder
+com.google.android.gms.common.providers.zza
 com.google.firebase.crashlytics.internal.common.DataTransportState:
     static final int REPORT_UPLOAD_VARIANT_LEGACY
     static final int REPORT_UPLOAD_VARIANT_DATATRANSPORT
@@ -10593,8 +10529,6 @@ com.google.protobuf.BinaryReader:
     private static final int FIXED32_MULTIPLE_MASK
     private static final int FIXED64_MULTIPLE_MASK
 com.squareup.okhttp.Dns$1
-com.google.firebase.iid.Registrar$FIIDInternalAdapter:
-    public java.lang.String getId()
 com.google.common.util.concurrent.FakeTimeLimiter
 com.google.android.gms.base.R$styleable
 okhttp3.Cache$CacheRequestImpl
@@ -10605,11 +10539,7 @@ com.google.firebase.crashlytics.internal.proto.WireFormat$JavaType
 com.squareup.okhttp.internal.http.AuthenticatorAdapter
 com.google.common.collect.ImmutableRangeMap$2
 com.google.common.collect.Lists$ReverseList
-com.google.android.gms.common.stats.WakeLockTracker:
-    public void registerAcquireEvent(android.content.Context,android.content.Intent,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)
-    public void registerReleaseEvent(android.content.Context,android.content.Intent)
-    public void registerEvent(android.content.Context,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String,int,java.util.List)
-    public void registerDeadlineEvent(android.content.Context,java.lang.String,java.lang.String,java.lang.String,int,java.util.List,boolean,long)
+com.google.android.gms.common.stats.WakeLockTracker
 com.google.common.collect.Table$Cell
 com.google.api.MetricRule$1
 com.google.common.math.package-info
@@ -11071,6 +11001,7 @@ com.google.common.collect.Multimaps$MapMultimap
 com.google.protobuf.Value$KindCase
 com.google.common.collect.ForwardingSortedMultiset$StandardDescendingMultiset
 com.google.firebase.installations.FirebaseInstallationsApi:
+    public abstract com.google.android.gms.tasks.Task getToken(boolean)
     public abstract com.google.android.gms.tasks.Task delete()
 com.google.android.gms.common.stats.StatsEvent$Types
 com.google.common.base.AbstractIterator
@@ -11260,6 +11191,7 @@ io.grpc.internal.ClientTransportFactory$ClientTransportOptions:
     public io.grpc.internal.ClientTransportFactory$ClientTransportOptions setChannelLogger(io.grpc.ChannelLogger)
     private io.grpc.ChannelLogger channelLogger
 com.google.android.gms.common.api.internal.zabw
+com.google.android.gms.common.providers.PooledExecutorsProvider$PooledExecutorFactory
 com.google.common.graph.Traverser$TreeTraverser$3
 io.grpc.ServerServiceDefinition
 com.google.android.gms.internal.firebase-auth-api.zzvg:
@@ -11917,7 +11849,6 @@ okhttp3.internal.ws.WebSocketWriter
 com.google.common.reflect.Types$NativeTypeVariableEquals
 io.grpc.okhttp.OkHttpClientTransport$2:
     public io.grpc.internal.TransportTracer$FlowControlWindows read()
-com.google.firebase.functions.BuildConfig
 com.google.android.gms.internal.auth-api-phone.zze
 com.google.firebase.firestore.core.ListenSequence:
     public static final long INVALID
@@ -11942,6 +11873,7 @@ com.google.android.gms.common.sqlite.CursorWrapper
 com.google.common.io.ByteSink
 okhttp3.RealCall:
     public okhttp3.Request request()
+    public void enqueue(okhttp3.Callback)
     public okio.Timeout timeout()
     public synchronized boolean isExecuted()
     okhttp3.internal.connection.StreamAllocation streamAllocation()
@@ -11964,7 +11896,6 @@ com.google.android.gms.safetynet.SafeBrowsingData:
     public void setBlacklists(byte[])
     public byte[] getBlacklists()
     public void setTempDir(java.io.File)
-com.google.firebase.iid.BuildConfig
 androidx.core.view.accessibility.AccessibilityEventCompat
 com.google.protobuf.DescriptorProtos$SourceCodeInfo
 com.google.protobuf.NullValue$NullValueVerifier
@@ -12380,9 +12311,7 @@ io.grpc.Metadata$Key:
     public static io.grpc.Metadata$Key of(java.lang.String,io.grpc.Metadata$BinaryStreamMarshaller)
     public final java.lang.String originalName()
 androidx.core.content.pm.PermissionInfoCompat$Protection
-com.google.android.gms.common.stats.StatsUtils:
-    public void <init>()
-    public static java.lang.String getEventKey(android.content.Context,android.content.Intent)
+com.google.android.gms.common.stats.StatsUtils
 com.google.common.math.IntMath:
     public static int ceilingPowerOfTwo(int)
     public static int floorPowerOfTwo(int)
@@ -12613,8 +12542,7 @@ com.google.common.graph.ValueGraph
 okhttp3.internal.Util:
     private void <init>()
     public static void closeQuietly(java.net.ServerSocket)
-com.google.android.gms.common.providers.PooledExecutorsProvider:
-    private void <init>()
+com.google.android.gms.common.providers.PooledExecutorsProvider
 com.google.common.util.concurrent.Futures$CallbackListener
 com.google.android.gms.common.data.zaa
 io.grpc.InternalChannelz:
@@ -12688,6 +12616,7 @@ com.google.common.collect.ImmutableMapValues
 com.google.android.gms.stats.GCoreWakefulBroadcastReceiver
 com.google.common.util.concurrent.ForwardingFuture
 androidx.legacy.coreutils.R$drawable
+com.google.android.gms.common.stats.WakeLockEvent
 com.google.api.MetricDescriptor$1
 com.google.type.TimeOfDay$Builder
 com.google.common.graph.MutableGraph
@@ -12835,7 +12764,6 @@ com.google.common.graph.SuccessorsFunction
 com.google.common.reflect.ClassPath$ResourceInfo
 com.google.gson.internal.bind.TypeAdapters$29
 com.google.common.collect.ImmutableRangeMap$Builder
-com.google.firebase.functions.R$integer
 com.google.common.collect.ImmutableSortedMap$1EntrySet$1
 com.google.common.cache.LocalCache$AccessQueue$1
 com.google.gson.JsonStreamParser
@@ -12978,6 +12906,7 @@ com.google.firebase.firestore.core.FirestoreClient:
     private static final java.lang.String LOG_TAG
     private static final int MAX_CONCURRENT_LIMBO_RESOLUTIONS
 com.google.firebase.components.Dependency:
+    public static com.google.firebase.components.Dependency requiredProvider(java.lang.Class)
     public static com.google.firebase.components.Dependency setOfProvider(java.lang.Class)
 com.google.protobuf.WireFormat$Utf8Validation$1
 com.google.common.collect.StandardTable$RowMap$EntrySet$1
@@ -13072,6 +13001,7 @@ com.google.android.gms.internal.firebase-auth-api.zzw:
 com.google.android.gms.internal.firebase-auth-api.zzxx:
     void <init>()
 com.google.firestore.v1.TransactionOptionsOrBuilder
+com.google.android.gms.internal.common.zzj
 okio.GzipSink
 com.google.logging.type.HttpRequest$Builder
 io.grpc.DecompressorRegistry:
@@ -13195,6 +13125,7 @@ com.google.common.collect.FilteredEntryMultimap$Keys$1$1
 com.google.gson.internal.bind.TypeAdapters$7
 com.google.common.collect.ImmutableRangeSet$Builder
 com.google.common.util.concurrent.MoreExecutors$ScheduledListeningDecorator
+com.google.firebase.installations.GetAuthTokenListener
 androidx.core.view.ViewCompat$1
 org.checkerframework.checker.nullness.compatqual.PolyNullDecl
 com.google.common.collect.ForwardingImmutableCollection
@@ -13298,6 +13229,7 @@ okhttp3.Dispatcher:
     public void setMaxRequestsPerHost(int)
     public synchronized int getMaxRequestsPerHost()
     public synchronized void setIdleCallback(java.lang.Runnable)
+    void enqueue(okhttp3.RealCall$AsyncCall)
     public synchronized void cancelAll()
     public synchronized java.util.List queuedCalls()
     public synchronized java.util.List runningCalls()
@@ -13587,13 +13519,6 @@ com.google.errorprone.annotations.Var
 com.google.geo.type.ViewportOrBuilder
 com.google.protobuf.DescriptorProtos$MethodOptions$IdempotencyLevel$IdempotencyLevelVerifier
 com.google.rpc.LocalizedMessage$1
-com.google.firebase.iid.GmsRpc:
-    public com.google.android.gms.tasks.Task deleteToken(java.lang.String,java.lang.String,java.lang.String)
-    public com.google.android.gms.tasks.Task deleteInstanceId(java.lang.String)
-    public com.google.android.gms.tasks.Task subscribeToTopic(java.lang.String,java.lang.String,java.lang.String)
-    public com.google.android.gms.tasks.Task unsubscribeFromTopic(java.lang.String,java.lang.String,java.lang.String)
-    public static final java.lang.String ERROR_SERVICE_NOT_AVAILABLE
-    public static final java.lang.String ERROR_INTERNAL_SERVER_ERROR
 com.google.firestore.v1.BatchGetDocumentsResponse:
     private void clearResult()
     private void setFound(com.google.firestore.v1.Document)
@@ -13694,6 +13619,7 @@ com.google.android.gms.common.util.HttpUtils
 com.google.common.collect.HashBiMap$EntryForKey
 com.google.gson.internal.bind.TypeAdapters$5
 com.google.firebase.crashlytics.R$dimen
+com.google.android.gms.common.stats.StatsEvent
 com.google.common.collect.Interners$InternerFunction
 com.google.android.gms.common.data.BitmapTeleporter
 com.google.protobuf.DurationOrBuilder
@@ -13774,8 +13700,6 @@ com.google.common.hash.LongAddables
 androidx.core.widget.NestedScrollView$AccessibilityDelegate
 com.google.common.util.concurrent.AbstractIdleService$ThreadNameSupplier
 com.google.android.gms.internal.auth-api-phone.zzt
-com.google.firebase.iid.FcmBroadcastProcessor:
-    public static void reset()
 com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Application_Organization:
     private void <init>(java.lang.String)
     synthetic void <init>(java.lang.String,com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Application_Organization$1)
@@ -13793,7 +13717,9 @@ androidx.core.content.ContextCompat:
     public static android.graphics.drawable.Drawable getDrawable(android.content.Context,int)
     public static android.content.res.ColorStateList getColorStateList(android.content.Context,int)
     public static int getColor(android.content.Context,int)
+    public static java.io.File getNoBackupFilesDir(android.content.Context)
     public static java.io.File getCodeCacheDir(android.content.Context)
+    private static synchronized java.io.File createFilesDir(java.io.File)
     public static boolean isDeviceProtectedStorage(android.content.Context)
     public static java.util.concurrent.Executor getMainExecutor(android.content.Context)
     public static void startForegroundService(android.content.Context,android.content.Intent)
@@ -13817,10 +13743,7 @@ io.grpc.Context$1:
     public void run()
     final synthetic java.lang.Runnable val$r
     final synthetic io.grpc.Context this$0
-com.google.android.gms.common.util.WorkSourceUtil:
-    private void <init>()
-    public static android.os.WorkSource fromPackageAndModuleExperimentalPi(android.content.Context,java.lang.String,java.lang.String)
-    private static int zzd(android.content.Context,java.lang.String)
+com.google.android.gms.common.util.WorkSourceUtil
 androidx.core.app.NotificationCompat$Action$Builder
 com.google.api.AuthRequirement$Builder
 com.google.protobuf.ProtocolStringList
@@ -13923,6 +13846,7 @@ com.google.common.util.concurrent.AggregateFutureState$AtomicHelper
 com.google.common.collect.LinkedListMultimap$NodeIterator
 com.google.protobuf.DescriptorProtos$EnumValueDescriptorProtoOrBuilder
 com.google.common.util.concurrent.AbstractExecutionThreadService$1$2
+com.google.android.gms.security.zza
 com.google.firestore.v1.DocumentTransform$Builder:
     public java.lang.String getDocument()
     public com.google.protobuf.ByteString getDocumentBytes()
@@ -14116,7 +14040,6 @@ okio.Base64:
     private void <init>()
     public static byte[] decode(java.lang.String)
     public static java.lang.String encodeUrl(byte[])
-com.google.firebase.functions.R$dimen
 com.google.common.util.concurrent.ListenableFutureTask
 com.google.common.base.internal.Finalizer
 com.google.android.gms.internal.firebase-auth-api.zzfc:
@@ -14276,8 +14199,10 @@ com.google.android.gms.common.util.PlatformVersion:
     private void <init>()
     public static boolean isAtLeastHoneycomb()
     public static boolean isAtLeastHoneycombMR1()
+    public static boolean isAtLeastJellyBeanMR1()
     public static boolean isAtLeastLollipopMR1()
     public static boolean isAtLeastM()
+    public static boolean isAtLeastP()
     public static boolean isAtLeastQ()
 androidx.core.view.MenuItemCompat$1
 io.grpc.ForwardingServerCallListener$SimpleForwardingServerCallListener
@@ -14462,6 +14387,7 @@ com.google.android.gms.common.internal.safeparcel.SafeParcelReader:
     public static short readShort(android.os.Parcel,int)
     public static java.lang.Integer readIntegerObject(android.os.Parcel,int)
     public static java.math.BigInteger createBigInteger(android.os.Parcel,int)
+    public static float readFloat(android.os.Parcel,int)
     public static double readDouble(android.os.Parcel,int)
     public static java.math.BigDecimal createBigDecimal(android.os.Parcel,int)
     public static byte[][] createByteArrayArray(android.os.Parcel,int)
@@ -14622,8 +14548,6 @@ com.google.api.ResourceReference$1
 io.grpc.ServiceProviders:
     private void <init>()
 io.grpc.internal.ManagedChannelImpl$1StatsFetcher
-com.google.android.gms.internal.cloudmessaging.zze:
-    public void <init>()
 com.google.firebase.analytics.connector.internal.zzc:
     public final com.google.firebase.analytics.connector.AnalyticsConnector$AnalyticsConnectorListener zza()
     public final void zza(java.util.Set)
@@ -14645,6 +14569,7 @@ com.google.protobuf.ExtensionRegistryFactory:
     static final java.lang.String FULL_REGISTRY_CLASS_NAME
 io.grpc.internal.OobChannel$1OobSubchannelPicker
 com.google.common.collect.SortedLists$KeyAbsentBehavior
+com.google.android.gms.common.util.concurrent.zza
 com.google.rpc.DebugInfoOrBuilder
 com.google.common.collect.Multisets$5
 androidx.legacy.coreutils.R$string
@@ -14827,8 +14752,6 @@ okio.Timeout:
 com.google.protobuf.DescriptorProtos$UninterpretedOption$NamePart
 com.google.common.collect.ForwardingImmutableList
 com.google.rpc.Code$1
-com.google.firebase.functions.FirebaseFunctionsException$Code:
-    static com.google.firebase.functions.FirebaseFunctionsException$Code fromValue(int)
 com.google.protobuf.WireFormat$JavaType:
     java.lang.Object getDefaultDefault()
 com.google.gson.internal.ConstructorConstructor$5
@@ -15227,6 +15150,7 @@ com.google.android.datatransport.runtime.TransportImpl:
 com.google.common.hash.AbstractNonStreamingHashFunction$BufferingHasher
 androidx.loader.content.CursorLoader
 com.google.protobuf.DescriptorProtos$EnumValueOptionsOrBuilder
+com.google.android.gms.common.stats.zza
 com.google.protobuf.CodedInputStream$UnsafeDirectNioDecoder
 com.google.firebase.analytics.FirebaseAnalytics$ConsentType
 com.google.android.gms.common.api.internal.zak:
@@ -15404,8 +15328,6 @@ com.google.firebase.crashlytics.internal.common.MetaDataStore:
     private static final java.lang.String METADATA_EXT
     private static final java.lang.String KEY_USER_ID
 com.google.android.gms.internal.firebase-auth-api.zzqu
-com.google.android.gms.internal.common.zze:
-    private static final com.google.android.gms.internal.common.zzf zzjj
 io.grpc.android.AndroidChannelBuilder:
     private static final java.lang.Class OKHTTP_CHANNEL_BUILDER_CLASS
 com.google.android.gms.measurement.internal.zzkh:
@@ -15470,10 +15392,6 @@ androidx.core.app.NotificationCompatJellybean:
 io.grpc.okhttp.internal.ConnectionSpec:
     public static final io.grpc.okhttp.internal.ConnectionSpec COMPATIBLE_TLS
     public static final io.grpc.okhttp.internal.ConnectionSpec CLEARTEXT
-com.google.android.gms.stats.WakeLock:
-    private final java.lang.String zzg
-    private final java.util.Set zzk
-    private static volatile com.google.android.gms.stats.WakeLock$zza zzo
 com.google.android.gms.internal.firebase-auth-api.zzbc:
     private com.google.android.gms.internal.firebase-auth-api.zzba zzb
 com.google.android.gms.internal.measurement.zze
@@ -15783,8 +15701,6 @@ io.grpc.internal.ManagedChannelImpl$1ChannelCallTracerFactory:
 com.google.android.gms.internal.safetynet.zzk:
     public void <init>()
     private static final java.lang.String TAG
-com.google.android.gms.common.util.concurrent.NamedThreadFactory:
-    private final int priority
 io.grpc.okhttp.internal.Util:
     public static final byte[] EMPTY_BYTE_ARRAY
 com.google.firebase.firestore.proto.MaybeDocument$DocumentTypeCase:
@@ -15792,8 +15708,6 @@ com.google.firebase.firestore.proto.MaybeDocument$DocumentTypeCase:
 com.google.protobuf.JavaType:
     private final java.lang.Class type
 com.google.android.gms.internal.measurement.zzs
-com.google.firebase.functions.FirebaseFunctions:
-    private final com.google.firebase.FirebaseApp app
 com.google.firebase.crashlytics.internal.proto.ByteString:
     public static final com.google.firebase.crashlytics.internal.proto.ByteString EMPTY
 com.google.android.gms.internal.firebase-auth-api.zzcr:
@@ -15833,7 +15747,6 @@ com.google.android.gms.internal.measurement.zzcd$zzh:
     private final void zza(com.google.android.gms.internal.measurement.zzcd$zzd)
     public static com.google.android.gms.internal.measurement.zzcd$zzh$zza zza()
     static synthetic void zza(com.google.android.gms.internal.measurement.zzcd$zzh,com.google.android.gms.internal.measurement.zzcd$zzd)
-com.google.android.gms.stats.WakeLock$zza
 com.google.android.gms.internal.measurement.zzoe:
     private static final com.google.android.gms.internal.measurement.zzdh zza
     private static final com.google.android.gms.internal.measurement.zzdh zzc
@@ -15947,8 +15860,6 @@ com.google.android.gms.internal.measurement.zzkz:
     private static final long zzu
     private static final long zzv
     private static final int zzw
-com.google.firebase.iid.InstanceIdResultImpl:
-    private final java.lang.String id
 com.google.android.gms.internal.firebase-auth-api.zzaaa:
     public static final com.google.android.gms.internal.firebase-auth-api.zzaab zza
 com.google.android.gms.internal.common.zza:
@@ -15970,6 +15881,8 @@ com.google.android.gms.common.util.CrashUtils:
     private static int zzha
 com.google.android.gms.internal.measurement.zzq:
     private static com.google.android.gms.internal.measurement.zzs zza
+com.google.android.gms.common.GooglePlayServicesRepairableException:
+    private final int zzas
 androidx.loader.content.Loader:
     public void unregisterListener(androidx.loader.content.Loader$OnLoadCompleteListener)
     public void abandon()
@@ -16053,7 +15966,6 @@ com.google.protobuf.ByteString:
     private static final java.util.Comparator UNSIGNED_LEXICOGRAPHICAL_COMPARATOR
 io.grpc.internal.RetriableStream$1DecompressorRegistryEntry:
     final synthetic io.grpc.internal.RetriableStream this$0
-com.google.android.gms.stats.zza
 com.google.firebase.encoders.Encoder
 com.google.android.gms.common.data.DataHolder:
     private int zalz
@@ -16247,15 +16159,6 @@ io.grpc.internal.GrpcUtil:
     public static final io.grpc.ProxyDetector NOOP_PROXY_DETECTOR
 com.google.android.gms.internal.firebase-auth-api.zzbk:
     private static final java.util.concurrent.ConcurrentMap zze
-com.google.android.gms.common.stats.LoggingConstants:
-    private static int LOG_LEVEL_OFF
-    private static int zzfp
-    private static int zzfq
-    private static int zzfr
-    private static int zzfs
-    private static int zzft
-    private static int zzfu
-    private static int zzfv
 com.google.protobuf.Internal:
     static final java.nio.charset.Charset ISO_8859_1
     public static final java.nio.ByteBuffer EMPTY_BYTE_BUFFER
@@ -16401,8 +16304,6 @@ com.google.android.gms.internal.firebase-auth-api.zzda:
 io.grpc.Metadata:
     public static final io.grpc.Metadata$BinaryMarshaller BINARY_BYTE_MARSHALLER
     static final synthetic boolean $assertionsDisabled
-com.google.android.gms.common.stats.WakeLockTracker:
-    private static boolean zzgt
 com.google.firebase.firestore.util.CustomClassMapper$BeanMapper:
     private final java.lang.reflect.Constructor constructor
     private final boolean throwOnUnknownProperties
@@ -16419,8 +16320,6 @@ com.google.android.gms.internal.measurement.zzhb:
     private boolean zze
 com.google.firebase.firestore.util.Util:
     private static final java.util.Random rand
-com.google.android.gms.internal.cloudmessaging.zza:
-    private static final com.google.android.gms.internal.cloudmessaging.zzb zza
 com.google.android.gms.internal.measurement.zzhs:
     private final com.google.android.gms.internal.measurement.zzil zzaz
     private final com.google.android.gms.internal.measurement.zzhu zzbb
@@ -16535,8 +16434,6 @@ com.google.firebase.firestore.local.LruGarbageCollector$Results:
     private final int sequenceNumbersCollected
     private final int targetsRemoved
     private final int documentsRemoved
-com.google.android.gms.cloudmessaging.zzp:
-    private final int zza
 com.google.firebase.emulators.EmulatedServiceSettings:
     public int getPort()
 com.google.android.gms.internal.measurement.zzfc:
@@ -16589,9 +16486,6 @@ com.google.android.gms.internal.measurement.zzbv$zzd$zza:
 com.google.android.gms.internal.measurement.zzi:
     private static final com.google.android.gms.internal.measurement.zzj zza
 com.google.android.gms.internal.firebase-auth-api.zzw
-com.google.android.gms.internal.common.zzj:
-    private static final enum int zzjm
-    private static final synthetic int[] zzjo
 com.google.android.gms.internal.firebase-auth-api.zzx:
     private static final java.util.logging.Logger zza
     private static final com.google.android.gms.internal.firebase-auth-api.zzw zzb
@@ -16635,8 +16529,6 @@ okhttp3.CacheControl:
     public static final okhttp3.CacheControl FORCE_NETWORK
     public static final okhttp3.CacheControl FORCE_CACHE
 okhttp3.internal.http.UnrepeatableRequestBody
-com.google.android.gms.internal.cloudmessaging.zzf:
-    private static final synthetic int[] zzc
 com.google.android.gms.common.util.AndroidUtilsLight:
     private static volatile int zzgu
 com.google.android.gms.common.api.Api$zaa
@@ -16650,11 +16542,6 @@ androidx.core.content.ContextCompat:
 com.google.android.gms.internal.measurement.zzkq:
     private final java.util.List zza
 com.google.android.gms.dynamite.zze
-com.google.android.gms.common.util.WorkSourceUtil:
-    private static final int zzhz
-    private static final java.lang.reflect.Method zzid
-    private static final java.lang.reflect.Method zzif
-    private static final java.lang.reflect.Method zzig
 androidx.lifecycle.LiveData:
     public java.lang.Object getValue()
     public boolean hasActiveObservers()
@@ -16674,12 +16561,13 @@ com.google.android.gms.internal.firebase-auth-api.zzck:
     final synthetic com.google.android.gms.internal.firebase-auth-api.zzcl zza
 com.google.android.gms.internal.measurement.zzij:
     private com.google.android.gms.internal.measurement.zzjj zza
-com.google.android.gms.internal.cloudmessaging.zzg
 okio.Base64:
     private static final byte[] URL_MAP
 com.google.firebase.auth.internal.zzaw:
     final synthetic com.google.firebase.auth.internal.zzax zza
 io.grpc.InternalChannelz$OtherSecurity
+com.google.android.gms.common.GooglePlayServicesNotAvailableException:
+    public final int errorCode
 com.google.firebase.storage.StorageReference:
     static final synthetic boolean $assertionsDisabled
 com.google.protobuf.NullValue$1
@@ -16693,8 +16581,6 @@ com.google.android.gms.internal.measurement.zzok:
     private static final com.google.android.gms.internal.measurement.zzdh zza
 io.grpc.okhttp.OkHttpChannelBuilder:
     private final boolean useGetForSafeMethods
-com.google.android.gms.internal.cloudmessaging.zze:
-    private static com.google.android.gms.internal.cloudmessaging.zzg zza
 com.google.android.gms.internal.measurement.zzcd$zzg$zza:
     public final com.google.android.gms.internal.measurement.zzcd$zzg$zza zzb(java.lang.Iterable)
     public final com.google.android.gms.internal.measurement.zzcd$zzg$zza zza(com.google.android.gms.internal.measurement.zzcd$zzh$zza)
@@ -16731,9 +16617,6 @@ com.google.android.gms.measurement.internal.zzjr:
     public final synthetic bridge com.google.android.gms.measurement.internal.zzr zzh()
 com.google.firebase.firestore.proto.Target$TargetTypeCase:
     private final int value
-com.google.firebase.functions.FirebaseFunctionsException$Code:
-    private final int value
-    private static final android.util.SparseArray STATUS_LIST
 com.google.android.gms.internal.firebase-auth-api.zzbi:
     final synthetic com.google.android.gms.internal.firebase-auth-api.zzas zza
 com.google.firebase.auth.FirebaseAuthMultiFactorException:

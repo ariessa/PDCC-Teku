@@ -1,10 +1,10 @@
+import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pdcc_teku/dashboard_daily-check-ins_card.dart';
 import 'package:pdcc_teku/dashboard_weekly-check-ins_card.dart';
 import 'package:pdcc_teku/menu.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pdcc_teku/misc.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 
 class DashboardMain extends StatefulWidget {
   @override
@@ -35,98 +35,99 @@ class _DashboardMainState extends State<DashboardMain> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () => Future.value(false),
-      child:     Scaffold(
-      resizeToAvoidBottomPadding: false,
-      appBar: AppBar(
-        leading: GestureDetector(
-          child: Image.asset('assets/Menu.png'),
-          onTap: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage())),
-        ),
-        title: Text(
-          'DASHBOARD',
-          style: TextStyle(color: Color(0xff2699fb)),
-          textScaleFactor:
-          SizeConfig.safeBlockVertical * 0.1,
-        ),
-        centerTitle: true,
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-      ),
-      body: SingleChildScrollView(
-          child: Container(
-        color: Colors.white,
-        width: double.infinity,
-        child: Column(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(
-                  left: SizeConfig.blockSizeHorizontal * 5,
-                  right: SizeConfig.blockSizeHorizontal * 5,
-                  top: SizeConfig.blockSizeVertical * 2.5,
-                  bottom: SizeConfig.blockSizeVertical * 1),
-              child: StreamBuilder(
-                  stream: FirebaseFirestore.instance
-                      .collection('dashboard')
-                      .doc('totalVisitors')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return new LoadingCircle();
-                    }
+        onWillPop: () => Future.value(false),
+        child: Scaffold(
+          resizeToAvoidBottomPadding: false,
+          appBar: AppBar(
+            leading: GestureDetector(
+              child: Image.asset('assets/Menu.png'),
+              onTap: () => Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HomePage())),
+            ),
+            title: Text(
+              'DASHBOARD',
+              style: TextStyle(color: Color(0xff2699fb)),
+              textScaleFactor: SizeConfig.safeBlockVertical * 0.1,
+            ),
+            centerTitle: true,
+            elevation: 0.0,
+            backgroundColor: Colors.white,
+          ),
+          body: SingleChildScrollView(
+              child: Container(
+            color: Colors.white,
+            width: double.infinity,
+            child: Column(
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(
+                      left: SizeConfig.blockSizeHorizontal * 5,
+                      right: SizeConfig.blockSizeHorizontal * 5,
+                      top: SizeConfig.blockSizeVertical * 2.5,
+                      bottom: SizeConfig.blockSizeVertical * 1),
+                  child: StreamBuilder(
+                      stream: FirebaseFirestore.instance
+                          .collection('dashboard')
+                          .doc('totalVisitors')
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData) {
+                          return new LoadingCircle();
+                        }
 
-                    return new DashboardDailyVisitorsCard(
-                      totalDailyVisitors: snapshot.data['totalDailyVisitors'],
-                    );
-                  }),
+                        return new DashboardDailyVisitorsCard(
+                          totalDailyVisitors:
+                              snapshot.data['totalDailyVisitors'],
+                        );
+                      }),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                      bottom: SizeConfig.blockSizeVertical * 1,
+                      left: SizeConfig.blockSizeHorizontal * 5,
+                      right: SizeConfig.blockSizeHorizontal * 5),
+                  child: StreamBuilder(
+                      stream: FirebaseFirestore.instance
+                          .collection('dashboard')
+                          .doc('totalVisitors')
+                          .snapshots(),
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData) {
+                          return new LoadingCircle();
+                        }
+                        return new DashboardWeeklyVisitorsCard(
+                          totalWeeklyVisitors:
+                              snapshot.data['totalWeeklyVisitors'],
+                        );
+                      }),
+                ),
+                Container(
+                  margin: EdgeInsets.only(
+                    bottom: SizeConfig.blockSizeVertical * 5,
+                    left: SizeConfig.blockSizeHorizontal * 5,
+                    right: SizeConfig.blockSizeHorizontal * 5,
+                  ),
+                  child: StreamBuilder<QuerySnapshot>(
+                    stream: FirebaseFirestore.instance
+                        .collection('genders')
+                        .snapshots(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return LinearProgressIndicator();
+                      } else {
+                        List<Task> task = snapshot.data.docs
+                            .map((documentSnapshot) =>
+                                Task.fromMap(documentSnapshot.data()))
+                            .toList();
+                        return _buildChart(context, task);
+                      }
+                    },
+                  ),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.only(
-                  bottom: SizeConfig.blockSizeVertical * 1,
-                  left: SizeConfig.blockSizeHorizontal * 5,
-                  right: SizeConfig.blockSizeHorizontal * 5),
-              child: StreamBuilder(
-                  stream: FirebaseFirestore.instance
-                      .collection('dashboard')
-                      .doc('totalVisitors')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return new LoadingCircle();
-                    }
-                    return new DashboardWeeklyVisitorsCard(
-                      totalWeeklyVisitors: snapshot.data['totalWeeklyVisitors'],
-                    );
-                  }),
-            ),
-            Container(
-              margin: EdgeInsets.only(
-                bottom: SizeConfig.blockSizeVertical * 5,
-                left: SizeConfig.blockSizeHorizontal * 5,
-                right: SizeConfig.blockSizeHorizontal * 5,
-              ),
-              child: StreamBuilder<QuerySnapshot>(
-                stream: FirebaseFirestore.instance
-                    .collection('genders')
-                    .snapshots(),
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return LinearProgressIndicator();
-                  } else {
-                    List<Task> task = snapshot.data.docs
-                        .map((documentSnapshot) =>
-                            Task.fromMap(documentSnapshot.data()))
-                        .toList();
-                    return _buildChart(context, task);
-                  }
-                },
-              ),
-            ),
-          ],
-        ),
-      )),
-    ));
+          )),
+        ));
   }
 
   Widget _buildChart(BuildContext context, List<Task> taskdata) {
@@ -140,7 +141,8 @@ class _DashboardMainState extends State<DashboardMain> {
           child: Column(
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2.5),
+                margin:
+                    EdgeInsets.only(top: SizeConfig.blockSizeVertical * 2.5),
                 child: Text(
                   'VISITORS BY GENDER',
                   textScaleFactor: SizeConfig.safeBlockVertical * 0.15,
@@ -169,12 +171,13 @@ class _DashboardMainState extends State<DashboardMain> {
                           entryTextStyle: charts.TextStyleSpec(
                             color: charts.ColorUtil.fromDartColor(Colors.black),
                             fontFamily: 'Arial',
-                            fontSize: (SizeConfig.safeBlockHorizontal * 3.5).toInt(),
-                            // fontWeight: 6.toString(),
+                            fontSize:
+                                (SizeConfig.safeBlockHorizontal * 3.5).toInt(),
                           ))
                     ],
                     defaultRenderer: new charts.ArcRendererConfig(
-                        arcWidth: (SizeConfig.blockSizeHorizontal * 100).toInt(),
+                        arcWidth:
+                            (SizeConfig.blockSizeHorizontal * 100).toInt(),
                         arcRendererDecorators: [
                           new charts.ArcLabelDecorator(
                               labelPosition: charts.ArcLabelPosition.inside)

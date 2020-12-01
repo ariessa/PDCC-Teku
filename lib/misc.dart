@@ -13,9 +13,7 @@ extension EmailValidator on String {
 // Extension method for String to check for phone number validity
 extension PhoneNumberValidator on String {
   bool isValidPhoneNumber() {
-    return RegExp(
-            r'(^(?:[+0]9)?[0-9]{10,12}$)')
-        .hasMatch(this);
+    return RegExp(r'(^(?:[+0]9)?[0-9]{10,12}$)').hasMatch(this);
   }
 }
 

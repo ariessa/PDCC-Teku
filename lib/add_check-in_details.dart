@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pdcc_teku/misc.dart';
-import 'package:pdcc_teku/add_check-in_confirm.dart';
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
+import 'package:pdcc_teku/add_check-in_confirm.dart';
+import 'package:pdcc_teku/misc.dart';
 
 class AddCheckInDetails extends StatefulWidget {
   AddCheckInDetails(
@@ -100,169 +100,170 @@ class _AddCheckInDetailsState extends State<AddCheckInDetails> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return WillPopScope(
-      onWillPop: () => Future.value(false),
-      child: Scaffold(
-        resizeToAvoidBottomPadding: false,
-        appBar: AppBar(
-          leading: GestureDetector(
-            child: Image.asset('assets/Back.png'),
-            onTap: () => Navigator.pop(context),
-          ),
-          title: Text(
-            'CHECK IN DETAILS',
-            style: TextStyle(color: Color(0xff2699fb)),
-            textScaleFactor: 0.8,
-          ),
-          centerTitle: true,
-          elevation: 0.0,
-          backgroundColor: Colors.white,
-        ),
-        body: SingleChildScrollView(
-            child: Container(
-                color: Colors.white,
-                child: Form(
-                  key: _formKey,
-                  autovalidateMode: AutovalidateMode.always,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      // Timeline
-                      Container(
-                        alignment: Alignment.center,
-                                        margin: EdgeInsets.only(
-                  top: SizeConfig.blockSizeVertical * 2.5,
-                  left: SizeConfig.blockSizeHorizontal * 2.5,
-                  right: SizeConfig.blockSizeHorizontal * 2.5),
-                        child: ScreenProgress(ticks: 2),
-                      ),
-
-                      Container(
-                                        margin: EdgeInsets.only(
-                  top: SizeConfig.blockSizeVertical * 7.5,
-                  left: SizeConfig.blockSizeHorizontal * 7.5,
-                  right: SizeConfig.blockSizeHorizontal * 7.5),
-                        child: Text(
-                          "Date",
-                          style: TextStyle(
-                              color: Color(0xff2699fb),
-                              fontWeight: FontWeight.bold),
-                          textScaleFactor: 1,
-                        ),
-                      ),
-
-                      Container(
-                        // padding: EdgeInsets.only(top: 10),
-                        margin: EdgeInsets.only(
-                  top: SizeConfig.blockSizeVertical * 1,
-                  left: SizeConfig.blockSizeHorizontal * 7.5,
-                  right: SizeConfig.blockSizeHorizontal * 7.5),
-                        child: Row(children: <Widget>[
-                          new Expanded(
-                              child: new TextFormField(
-                            decoration: new InputDecoration(),
-                            controller: _controller,
-                            onTap: () => [
-                              SystemChannels.textInput
-                                  .invokeMethod('TextInput.hide'),
-                              _chooseDate(context, "")
-                            ],
-                            validator: (val) =>
-                                isValidDob(val) ? null : 'Date is invalid',
-                            onSaved: (value) => _checkInDate = value.toString(),
-                          )),
-                          new IconButton(
-                            icon: new Icon(Icons.calendar_today),
-                            tooltip: 'Choose date',
-                            onPressed: (() {
-                              _chooseDate(context, _controller.text);
-                            }),
+        onWillPop: () => Future.value(false),
+        child: Scaffold(
+            resizeToAvoidBottomPadding: false,
+            appBar: AppBar(
+              leading: GestureDetector(
+                child: Image.asset('assets/Back.png'),
+                onTap: () => Navigator.pop(context),
+              ),
+              title: Text(
+                'CHECK IN DETAILS',
+                style: TextStyle(color: Color(0xff2699fb)),
+                textScaleFactor: 0.8,
+              ),
+              centerTitle: true,
+              elevation: 0.0,
+              backgroundColor: Colors.white,
+            ),
+            body: SingleChildScrollView(
+                child: Container(
+                    color: Colors.white,
+                    child: Form(
+                      key: _formKey,
+                      autovalidateMode: AutovalidateMode.always,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          // Timeline
+                          Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 2.5,
+                                left: SizeConfig.blockSizeHorizontal * 2.5,
+                                right: SizeConfig.blockSizeHorizontal * 2.5),
+                            child: ScreenProgress(ticks: 2),
                           ),
-                        ]),
-                      ),
 
-                      Container(
-                                                margin: EdgeInsets.only(
-                  top: SizeConfig.blockSizeVertical * 7.5,
-                  left: SizeConfig.blockSizeHorizontal * 7.5,
-                  right: SizeConfig.blockSizeHorizontal * 7.5),
-                        child: Text(
-                          "Time",
-                          style: TextStyle(
-                              color: Color(0xff2699fb),
-                              fontWeight: FontWeight.bold),
-                          textScaleFactor: 1,
-                        ),
-                      ),
-
-                      Container(
-margin: EdgeInsets.only(
-                  top: SizeConfig.blockSizeVertical * 1,
-                  left: SizeConfig.blockSizeHorizontal * 7.5,
-                  right: SizeConfig.blockSizeHorizontal * 7.5),
-                        child: Row(children: <Widget>[
-                          new Expanded(
-                              child: new TextFormField(
-                            decoration: new InputDecoration(),
-                            controller: _timeController,
-                            onTap: () => [
-                              SystemChannels.textInput
-                                  .invokeMethod('TextInput.hide'),
-                              _chooseTime(context, "")
-                            ],
-                            validator: (val) =>
-                                isValidTime(val) ? null : 'Time is invalid',
-                            onSaved: (value) => _checkInTime = value.toString(),
-                          )),
-                          new IconButton(
-                            icon: new Icon(Icons.schedule),
-                            tooltip: 'Choose time',
-                            onPressed: (() {
-                              _chooseTime(context, _timeController.text);
-                            }),
-                          ),
-                        ]),
-                      ),
-
-                      Container(
-                        margin: EdgeInsets.only(
-                                              top: SizeConfig.blockSizeVertical * 7.5,
-                  left: SizeConfig.blockSizeHorizontal * 7.5,
-                  right: SizeConfig.blockSizeHorizontal * 10),
-                        width: double.infinity,
-                        height: SizeConfig.blockSizeVertical * 6,
-                        child: RaisedButton(
-                            color: Color(0xff2699fb),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 7.5,
+                                left: SizeConfig.blockSizeHorizontal * 7.5,
+                                right: SizeConfig.blockSizeHorizontal * 7.5),
                             child: Text(
-                              'NEXT',
-                              style: TextStyle(color: Colors.white),
+                              "Date",
+                              style: TextStyle(
+                                  color: Color(0xff2699fb),
+                                  fontWeight: FontWeight.bold),
+                              textScaleFactor: 1,
                             ),
-                            onPressed: () async {
-                              final FormState form = _formKey.currentState;
+                          ),
 
-                              if (!form.validate()) {
-                                errorDialog(context);
-                              } else {
-                                form.save(); //This invokes each onSaved event
+                          Container(
+                            // padding: EdgeInsets.only(top: 10),
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 1,
+                                left: SizeConfig.blockSizeHorizontal * 7.5,
+                                right: SizeConfig.blockSizeHorizontal * 7.5),
+                            child: Row(children: <Widget>[
+                              new Expanded(
+                                  child: new TextFormField(
+                                decoration: new InputDecoration(),
+                                controller: _controller,
+                                onTap: () => [
+                                  SystemChannels.textInput
+                                      .invokeMethod('TextInput.hide'),
+                                  _chooseDate(context, "")
+                                ],
+                                validator: (val) =>
+                                    isValidDob(val) ? null : 'Date is invalid',
+                                onSaved: (value) =>
+                                    _checkInDate = value.toString(),
+                              )),
+                              new IconButton(
+                                icon: new Icon(Icons.calendar_today),
+                                tooltip: 'Choose date',
+                                onPressed: (() {
+                                  _chooseDate(context, _controller.text);
+                                }),
+                              ),
+                            ]),
+                          ),
 
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AddCheckInConfirm(
-                                              firstName: _firstName,
-                                              lastName: _lastName,
-                                              email: _email,
-                                              phoneNumber: _phoneNumber,
-                                              checkInDate: _checkInDate,
-                                              checkInTime: _checkInTime,
-                                            )));
-                              }
-                            }),
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 7.5,
+                                left: SizeConfig.blockSizeHorizontal * 7.5,
+                                right: SizeConfig.blockSizeHorizontal * 7.5),
+                            child: Text(
+                              "Time",
+                              style: TextStyle(
+                                  color: Color(0xff2699fb),
+                                  fontWeight: FontWeight.bold),
+                              textScaleFactor: 1,
+                            ),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 1,
+                                left: SizeConfig.blockSizeHorizontal * 7.5,
+                                right: SizeConfig.blockSizeHorizontal * 7.5),
+                            child: Row(children: <Widget>[
+                              new Expanded(
+                                  child: new TextFormField(
+                                decoration: new InputDecoration(),
+                                controller: _timeController,
+                                onTap: () => [
+                                  SystemChannels.textInput
+                                      .invokeMethod('TextInput.hide'),
+                                  _chooseTime(context, "")
+                                ],
+                                validator: (val) =>
+                                    isValidTime(val) ? null : 'Time is invalid',
+                                onSaved: (value) =>
+                                    _checkInTime = value.toString(),
+                              )),
+                              new IconButton(
+                                icon: new Icon(Icons.schedule),
+                                tooltip: 'Choose time',
+                                onPressed: (() {
+                                  _chooseTime(context, _timeController.text);
+                                }),
+                              ),
+                            ]),
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.only(
+                                top: SizeConfig.blockSizeVertical * 7.5,
+                                left: SizeConfig.blockSizeHorizontal * 7.5,
+                                right: SizeConfig.blockSizeHorizontal * 10),
+                            width: double.infinity,
+                            height: SizeConfig.blockSizeVertical * 6,
+                            child: RaisedButton(
+                                color: Color(0xff2699fb),
+                                child: Text(
+                                  'NEXT',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () async {
+                                  final FormState form = _formKey.currentState;
+
+                                  if (!form.validate()) {
+                                    errorDialog(context);
+                                  } else {
+                                    form.save(); //This invokes each onSaved event
+
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                AddCheckInConfirm(
+                                                  firstName: _firstName,
+                                                  lastName: _lastName,
+                                                  email: _email,
+                                                  phoneNumber: _phoneNumber,
+                                                  checkInDate: _checkInDate,
+                                                  checkInTime: _checkInTime,
+                                                )));
+                                  }
+                                }),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                )))));
-    
-
+                    )))));
   }
 }
 
