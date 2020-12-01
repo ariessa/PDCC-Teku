@@ -33,7 +33,7 @@ The features of this app are as follows:
 
 1. Refer to this [article](https://android.gadgethacks.com/how-to/android-basics-see-what-kind-processor-you-have-arm-arm64-x86-0168051/) to know your device's CPU architecture.
 
-2. Download either:
+2. Download any [`latest-release`](https://github.com/ariessa/pdcc_teku/releases) builds:
    - Specific release APK based on your device's CPU architecture
    - Fat APK (can be installed on `ARM`, `ARM64`, and `x86_64`)
    - AppBundle (can be installed on `ARM`, `ARM64`, and `x86_64`)
