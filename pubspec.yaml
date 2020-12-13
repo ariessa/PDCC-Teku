@@ -35,7 +35,7 @@ dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
 
 flutter_icons:
-  image_path: 'assets\PDCCTeku.jpg'
+  image_path: 'assets\PDCCTeku.png'
   android: true
   ios: false
 
