@@ -29,21 +29,21 @@ class _LoginPageState extends State<LoginPage> {
                           width: SizeConfig.screenWidth,
                           height: SizeConfig.blockSizeVertical * 50,
                           child: Container(
-                              color: Color(0xfff1f9ff),
+                              color: Color(0xffffffff),
                               constraints: BoxConstraints.expand(),
                               child: Column(
                                 children: <Widget>[
                                   SizedBox(
                                       height:
                                           SizeConfig.blockSizeVertical * 12),
-                                  Image.asset('assets/Logo.png'),
+                                  Image.asset('assets/PDCCTeku.png'),
                                   SizedBox(
                                       height: SizeConfig.blockSizeVertical * 5),
                                   Text('PDCC Teku',
                                       textScaleFactor:
                                           SizeConfig.safeBlockVertical * 0.3,
                                       style: TextStyle(
-                                        color: Color(0xff2699fb),
+                                        color: Color(0xff3E3E38),
                                         fontWeight: FontWeight.bold,
                                       ))
                                 ],
